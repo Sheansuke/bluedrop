@@ -1,0 +1,24 @@
+---
+import { clsx } from "clsx";
+
+interface Props {
+  color: string;
+  title: string;
+}
+
+const { color, title = "No title" } = Astro.props;
+---
+
+<div>
+  <div class="text-center h-20">
+    <h3 class="text-black text-3xl mb-2">{title}</h3>
+  </div>
+  <div
+    class={clsx(
+      color,
+      " p-16 rounded-2xl flex justify-center items-center"
+    )}
+  >
+    <slot name="icon" />
+  </div>
+</div>

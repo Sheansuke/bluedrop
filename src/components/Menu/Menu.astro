@@ -1,0 +1,46 @@
+---
+import MenuItem from "./MenuItem.astro";
+import {
+  PencilRuler,
+  PackageOpen,
+  Hammer,
+  Wrench,
+  Boxes,
+  WavesLadder,
+} from "@lucide/astro";
+---
+
+<div class="w-full pb-8 ">
+  <div class="bg-[#231f20] h-38 flex justify-center items-center">
+    <h1 class="text-6xl text-white text-center">SOLUCIONES QUE BRINDAMOS</h1>
+  </div>
+
+  <div class="">
+  <div class="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mx-8 my-16">
+
+      <MenuItem color="bg-black" title="INSTALACION">
+      <PencilRuler class="text-white size-60" slot="icon" />
+    </MenuItem>
+
+    <MenuItem color="bg-[#008cc7]" title="VENTA DE ACCESORIOS / EQUIPO">
+      <PackageOpen class="text-white size-60" slot="icon" />
+    </MenuItem>
+
+    <MenuItem color="bg-black" title="REMODELADO DE ESPACIOS">
+      <Hammer class="text-white size-60" slot="icon" />
+    </MenuItem>
+
+    <MenuItem color="bg-[#008cc7]" title="MANTENIMIENTO EN GENERAL">
+      <Wrench class="text-white size-60" slot="icon" />
+    </MenuItem>
+
+    <MenuItem color="bg-black" title="MINERALES Y SUMINISTROS">
+      <Boxes class="text-white size-60" slot="icon" />
+    </MenuItem>
+
+    <MenuItem color="bg-[#008cc7]" title="SERVICIOS DE PRISCINAS Y JACUZZIS">
+      <WavesLadder class="text-white size-60" slot="icon" />
+    </MenuItem>
+  </div>
+  </div>
+</div>
