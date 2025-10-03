@@ -16,20 +16,28 @@ import { Image } from "astro:assets";
 <Layout>
   <Menu />
 
+  <div
+    id="secomoelagua"
+    class="hidden md:block bg-[url(../assets/secomoelagua.jpg)] bg-fixed h-screen md:h-full bg-cover bg-no-repeat bg-[center_top_45%]"
+  >
+  </div>
 
- 
-    <div id="secomoelagua" class="bg-[url(../assets/secomoelagua.jpg)] bg-fixed h-full bg-cover bg-[center_top_45%]">  
+  <div id="secomoelagua" class="bg-[url(../assets/secomoelagua.jpg)] bg-contain bg-no-repeat h-[47.3%] w-screen md:hidden"></div>
 
-    </div>
-      <Logo3 id="logo3"   />
+  <!-- <Image
+    src={secomoelagua}
+    width={1920}
+    height={1080}
+    alt="El agua"
+    class="md:hidden"
+  /> -->
+
+  <Logo3 id="logo3" />
   <Logo4 id="logo4" />
   <Logo5 id="logo5" />
-  <Logo6 id="logo6"/>
+  <Logo6 id="logo6" />
   <Logo7 id="logo7" />
   <Logo8 id="logo8" />
-  <Logo9 id="logo9"  />
-  <Logo10 id="logo10"  />
- 
- 
-
+  <Logo9 id="logo9" />
+  <Logo10 id="logo10" />
 </Layout>
