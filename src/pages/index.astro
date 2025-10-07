@@ -9,51 +9,55 @@ import Logo7 from "../assets/pagina7.svg";
 import Logo8 from "../assets/pagina8.svg";
 import Logo9 from "../assets/pagina9.svg";
 import vasoagua from "../assets/vasoaguav3.png";
+import Hero from "../components/Hero/Hero.astro";
 import Menu from "../components/Menu/Menu.astro";
 import Layout from "../layouts/Layout.astro";
 ---
 
 <!-- TODO: PEPE -->
 <Layout>
-  <Menu />
 
-  <!-- <div
-    id="secomoelagua"
-    class="hidden md:block bg-[url(../assets/secomoelagua.jpg)] bg-fixed h-screen md:h-full bg-cover bg-no-repeat bg-[center_top_45%]"
-  >
-  </div>
+    <Hero />
 
-  
+    <Menu/>
 
-  <div
-    id="secomoelagua"
-    class="bg-[url(../assets/secomoelagua.jpg)] bg-contain bg-no-repeat h-[47.3%] w-screen md:hidden"
-  >
-  </div> -->
-  <div class="container mx-auto flex justify-center">
-    <div class="flex flex-col md:flex-row items-center md:items-start justify-between w-full mb-36">
-      <div class="md:w-1/2 text-left flex flex-col justify-center md:pr-8">
-        <h2 class="text-4xl md:text-6xl font-bold mb-4 mt-8 text-[rgb(11,65,88)]">Sé como el agua</h2>
-        <p class="text-lg md:text-xl text-gray-700">No es lujosa, pero sí muy valiosa</p>
-      </div>
-      <div class="md:w-1/2 flex justify-center mt-8 md:mt-0">
-        <Image
-          width={400}
-          height={1080}
-          src={vasoagua}
-          alt="Sé como el agua"
-          loading="eager"
-          class="max-w-full h-auto"
-        />
-      </div>
+    <!-- <div
+      id="secomoelagua"
+      class="hidden md:block bg-[url(../assets/secomoelagua.jpg)] bg-fixed h-screen md:h-full bg-cover bg-no-repeat bg-[center_top_45%]"
+    >
     </div>
-  </div>
-  <Logo3 id="logo3" />
-  <Logo4 id="logo4" />
-  <Logo5 id="logo5" />
-  <Logo6 id="logo6" />
-  <Logo7 id="logo7" />
-  <Logo8 id="logo8" />
-  <Logo9 id="logo9" />
-  <Logo10 id="logo10" />
+
+
+
+    <div
+      id="secomoelagua"
+      class="bg-[url(../assets/secomoelagua.jpg)] bg-contain bg-no-repeat h-[47.3%] w-screen md:hidden"
+    >
+    </div> -->
+    <div class="container mx-auto flex justify-center">
+        <div class="flex flex-col md:flex-row items-center md:items-start justify-between w-full mb-36">
+            <div class="md:w-1/2 text-left flex flex-col justify-center md:pr-8">
+                <h2 class="text-4xl md:text-6xl font-bold mb-4 mt-8 text-[rgb(11,65,88)]">Sé como el agua</h2>
+                <p class="text-lg md:text-xl text-gray-700">No es lujosa, pero sí muy valiosa</p>
+            </div>
+            <div class="md:w-1/2 flex justify-center mt-8 md:mt-0">
+                <Image
+                        width={400}
+                        height={1080}
+                        src={vasoagua}
+                        alt="Sé como el agua"
+                        loading="eager"
+                        class="max-w-full h-auto"
+                />
+            </div>
+        </div>
+    </div>
+    <Logo3 id="logo3"/>
+    <Logo4 id="logo4"/>
+    <Logo5 id="logo5"/>
+    <Logo6 id="logo6"/>
+    <Logo7 id="logo7"/>
+    <Logo8 id="logo8"/>
+    <Logo9 id="logo9"/>
+    <Logo10 id="logo10"/>
 </Layout>
