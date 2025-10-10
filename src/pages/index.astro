@@ -9,17 +9,21 @@ import Logo7 from "../assets/pagina7.svg";
 import Logo8 from "../assets/pagina8.svg";
 import Logo9 from "../assets/pagina9.svg";
 import vasoagua from "../assets/vasoaguav3.png";
+import Footer from "../components/Footer/Footer.astro";
 import Hero from "../components/Hero/Hero.astro";
+import MobileVideo from "../components/MobileVideo/MobileVideo.astro";
 import Menu from "../components/Menu/Menu.astro";
+import Navbar from "../components/Navbar/Navbar.astro";
 import Layout from "../layouts/Layout.astro";
 ---
 
 <!-- TODO: PEPE -->
 <Layout>
-
+  <Navbar />
     <Hero />
+  
 
-    <Menu/>
+  <Menu />
 
     <!-- <div
       id="secomoelagua"
@@ -35,10 +39,18 @@ import Layout from "../layouts/Layout.astro";
     >
     </div> -->
     <div class="container mx-auto flex justify-center">
-        <div class="flex flex-col md:flex-row items-center md:items-start justify-between w-full mb-36">
+    <div
+      class="flex flex-col md:flex-row items-center md:items-start justify-between w-full mb-36"
+    >
             <div class="md:w-1/2 text-left flex flex-col justify-center md:pr-8">
-                <h2 class="text-4xl md:text-6xl font-bold mb-4 mt-8 text-[rgb(11,65,88)]">Sé como el agua</h2>
-                <p class="text-lg md:text-xl text-gray-700">No es lujosa, pero sí muy valiosa</p>
+        <h2
+          class="text-4xl md:text-6xl font-bold mb-4 mt-8 text-[rgb(11,65,88)]"
+        >
+          Sé como el agua
+        </h2>
+        <p class="text-lg md:text-xl text-gray-700">
+          No es lujosa, pero sí muy valiosa
+        </p>
             </div>
             <div class="md:w-1/2 flex justify-center mt-8 md:mt-0">
                 <Image
@@ -52,12 +64,16 @@ import Layout from "../layouts/Layout.astro";
             </div>
         </div>
     </div>
-    <Logo3 id="logo3"/>
-    <Logo4 id="logo4"/>
-    <Logo5 id="logo5"/>
-    <Logo6 id="logo6"/>
-    <Logo7 id="logo7"/>
-    <Logo8 id="logo8"/>
-    <Logo9 id="logo9"/>
-    <Logo10 id="logo10"/>
+
+    <MobileVideo />
+  <Logo3 id="logo3" />
+  <Logo4 id="logo4" />
+  <Logo5 id="logo5" />
+  <Logo6 id="logo6" />
+  <Logo7 id="logo7" />
+  <Logo8 id="logo8" />
+  <Logo9 id="logo9" />
+  <Logo10 id="logo10" />
+
+  <Footer />
 </Layout>

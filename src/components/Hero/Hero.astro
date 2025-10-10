@@ -1,6 +1,8 @@
-<section class="relative h-screen overflow-hidden">
+<section class="relative h-screen overflow-hidden z-10">
   {/* Left Content */}
-  <div class="relative z-10 flex items-center px-8 bg-gradient-to-b from-blue-100 via-blue-200 to-blue-300 md:bg-none md:px-16 lg:px-24">
+  <div
+    class="relative z-10 flex items-center px-8 bg-gradient-to-b from-blue-100 via-blue-200 to-blue-300 md:bg-none md:px-16 lg:px-24"
+  >
     <div class="w-full md:w-1/2 h-screen flex flex-col justify-center">
       <h1
         class="text-center mb-8 font-sans text-6xl font-black uppercase leading-tight tracking-tight text-black md:text-6xl lg:text-9xl"
@@ -21,7 +23,7 @@
       </p>
 
       <p
-        class="text-center font-sans  text-2xl font-medium uppercase leading-relaxed tracking-wide text-gray-700 md:text-6xl"
+        class="text-center font-sans text-2xl font-medium uppercase leading-relaxed tracking-wide text-gray-700 md:text-6xl"
       >
         Si cuidamos el agua que utilizamos
         <br />
@@ -31,14 +33,53 @@
   </div>
 
   {/* Geometric Shapes */}
-  <div class="absolute inset-0 -z-0">
-    {/* Light gray diagonal shape */}
-    <div
-      class="hidden md:block absolute z-40 right-0 top-0 h-full w-1/2 bg-gray-200"
-      style={{
-        clipPath: "polygon(27% 0, 100% 0, 100% 100%, 32% 100%, 0 50%)",
-      }}
-    >
+  <div class="">
+     {/* Light gray diagonal shape - Desktop only */}
+     <div
+       class="hidden md:block absolute z-40 right-0 top-0 h-full w-1/2 bg-gray-200"
+       style={{
+         clipPath: "polygon(27% 0, 100% 0, 100% 100%, 32% 100%, 0 50%)",
+       }}
+     >
+      <video
+        id="hero-video"
+        class="w-full h-full mx-auto cursor-pointer object-cover"
+        loop
+        playsinline
+        preload="metadata"
+        muted
+      >
+         {/* Video Controls */}
+         <div
+           class="absolute inset-0 flex items-center justify-center z-[100] pointer-events-none"
+         >
+           <!-- Play/Pause Button -->
+           <button
+             id="play-pause-btn"
+             class="bg-white bg-opacity-90 hover:bg-opacity-100 rounded-full p-6 transition-all duration-300 shadow-lg cursor-pointer pointer-events-auto"
+             type="button"
+           >
+             <svg
+               id="play-icon"
+               class="w-12 h-12 text-gray-800"
+               fill="currentColor"
+               viewBox="0 0 24 24"
+             >
+               <path d="M8 5v14l11-7z"></path>
+             </svg>
+             <svg
+               id="pause-icon"
+               class="w-12 h-12 text-gray-800 hidden"
+               fill="currentColor"
+               viewBox="0 0 24 24"
+             >
+               <path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"></path>
+             </svg>
+           </button>
+         </div>
+        <source src="/src/assets/hero-videov2.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
     </div>
 
     {/* Black triangle */}
@@ -52,7 +93,7 @@
 
     {/* Blue accent */}
     <div
-      class=" hidden md:block absolute bottom-0 right-0 h-32 w-1/4 bg-[#008cc7] z-50"
+      class="hidden md:block absolute bottom-0 right-0 h-32 w-1/4 bg-[#008cc7] z-40"
       style={{
         clipPath: "polygon(20% 0, 0 100%, 2000% 100%)",
       }}
@@ -60,3 +101,57 @@
     </div>
   </div>
 </section>
+
+<script>
+   document.addEventListener("DOMContentLoaded", function () {
+     const video = document.getElementById("hero-video") as HTMLVideoElement;
+     const playPauseBtn = document.getElementById("play-pause-btn");
+     const playIcon = document.getElementById("play-icon");
+     const pauseIcon = document.getElementById("pause-icon");
+
+     if (video) {
+       // Function to toggle play/pause
+       function togglePlayPause() {
+         if (video.paused) {
+           video.play();
+           if (playIcon) playIcon.classList.add("hidden");
+           if (pauseIcon) pauseIcon.classList.remove("hidden");
+         } else {
+           video.pause();
+           if (playIcon) playIcon.classList.remove("hidden");
+           if (pauseIcon) pauseIcon.classList.add("hidden");
+         }
+       }
+
+       // Click anywhere on video to play/pause
+       video.addEventListener("click", function (e) {
+         e.preventDefault();
+         e.stopPropagation();
+         togglePlayPause();
+       });
+
+       // Play/Pause button functionality
+       if (playPauseBtn) {
+         playPauseBtn.addEventListener("click", function (e) {
+           e.preventDefault();
+           e.stopPropagation();
+           togglePlayPause();
+         });
+       }
+
+       // Update button states when video events occur
+       video.addEventListener("play", function () {
+         if (playIcon) playIcon.classList.add("hidden");
+         if (pauseIcon) pauseIcon.classList.remove("hidden");
+       });
+
+       video.addEventListener("pause", function () {
+         if (playIcon) playIcon.classList.remove("hidden");
+         if (pauseIcon) pauseIcon.classList.add("hidden");
+       });
+
+       // Initialize video with audio enabled (unmuted)
+       video.muted = false;
+     }
+   });
+</script>
