@@ -64,50 +64,30 @@ import heroVideo from "../../assets/hero-videov2.mp4";
         preload="metadata"
         muted
       >
-         {/* Video Controls */}
-         <div
-           class="absolute inset-0 flex items-center justify-center z-[100] pointer-events-none"
-         >
-           <!-- Play/Pause Button -->
-           <button
-             id="play-pause-btn"
-             class="bg-white bg-opacity-90 hover:bg-opacity-100 rounded-full p-6 transition-all duration-300 shadow-lg cursor-pointer pointer-events-auto"
-             type="button"
-           >
-             <svg
-               id="play-icon"
-               class="w-12 h-12 text-gray-800"
-               fill="currentColor"
-               viewBox="0 0 24 24"
-             >
-               <path d="M8 5v14l11-7z"></path>
-             </svg>
-             <svg
-               id="pause-icon"
-               class="w-12 h-12 text-gray-800 hidden"
-               fill="currentColor"
-               viewBox="0 0 24 24"
-             >
-               <path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"></path>
-             </svg>
-           </button>
-         </div>
+       
         <source src={heroVideo} type="video/mp4" />
         Your browser does not support the video tag.
       </video>
+      
+      {/* Play/Pause Button */}
+      <button
+        id="play-pause-btn"
+        class=" absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-black bg-opacity-50 hover:bg-opacity-70 text-white p-4 rounded-full transition-all duration-300 z-50"
+        aria-label="Play/Pause video"
+      >
+        <svg
+          id="play-icon"
+          class="w-8 h-8 "
+          fill="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path d="M8 5v14l11-7z"/>
+        </svg>
+      </button>
     </div>
 
-    {/* Black triangle */}
-    <div
-      class="hidden md:block absolute bottom-0 left-1/3 h-1/2 w-1/2 bg-black triangle-clip-path"
-    >
-    </div>
+   
 
-    {/* Blue accent */}
-    <div
-      class="hidden md:block absolute bottom-0 right-0 h-32 w-1/4 bg-[#008cc7] z-40 accent-clip-path"
-    >
-    </div>
   </div>
 </section>
 
@@ -116,7 +96,7 @@ import heroVideo from "../../assets/hero-videov2.mp4";
      const video = document.getElementById("hero-video") as HTMLVideoElement;
      const playPauseBtn = document.getElementById("play-pause-btn");
      const playIcon = document.getElementById("play-icon");
-     const pauseIcon = document.getElementById("pause-icon");
+ 
 
      if (video) {
        // Function to toggle play/pause
@@ -124,11 +104,13 @@ import heroVideo from "../../assets/hero-videov2.mp4";
          if (video.paused) {
            video.play();
            if (playIcon) playIcon.classList.add("hidden");
-           if (pauseIcon) pauseIcon.classList.remove("hidden");
+           if (playPauseBtn) playPauseBtn.classList.add("hidden");
+          
          } else {
            video.pause();
            if (playIcon) playIcon.classList.remove("hidden");
-           if (pauseIcon) pauseIcon.classList.add("hidden");
+            if (playPauseBtn) playPauseBtn.classList.remove("hidden");
+
          }
        }
 
@@ -151,12 +133,12 @@ import heroVideo from "../../assets/hero-videov2.mp4";
        // Update button states when video events occur
        video.addEventListener("play", function () {
          if (playIcon) playIcon.classList.add("hidden");
-         if (pauseIcon) pauseIcon.classList.remove("hidden");
+  
        });
 
        video.addEventListener("pause", function () {
          if (playIcon) playIcon.classList.remove("hidden");
-         if (pauseIcon) pauseIcon.classList.add("hidden");
+     
        });
 
        // Initialize video with audio enabled (unmuted)
