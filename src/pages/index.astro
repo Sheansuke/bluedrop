@@ -1,7 +1,14 @@
 ---
 import { Image } from "astro:assets";
 import Logo10 from "../assets/pagina10.svg";
-import Logo3 from "../assets/pagina3.svg";
+import pagina3 from "../assets/pagina3.jpg";
+import pagina4 from "../assets/pagina4.jpg";
+import pagina5 from "../assets/pagina5.jpg";
+import pagina6 from "../assets/pagina6.jpg";
+import pagina7 from "../assets/pagina7.jpg";
+import pagina8 from "../assets/pagina8.jpg";
+import pagina9 from "../assets/pagina9.jpg";
+import pagina10 from "../assets/pagina10.jpg";
 import Logo4 from "../assets/pagina4.svg";
 import Logo5 from "../assets/pagina5.svg";
 import Logo6 from "../assets/pagina6.svg";
@@ -18,19 +25,17 @@ import Layout from "../layouts/Layout.astro";
 import ResidencialIndustiaSection from "../components/Residencial-Industria/ResidencialIndustiaSection.astro";
 ---
 
-
 <Layout>
   <Navbar />
-    <Hero />
+  <Hero />
 
   <Menu />
 
-
-    <div class="container mx-auto flex justify-center">
+  <div class="container mx-auto flex justify-center">
     <div
       class="flex flex-col md:flex-row items-center md:items-start justify-between w-full mb-36"
     >
-            <div class="md:w-1/2 text-left flex flex-col justify-center md:pr-8">
+      <div class="md:w-1/2 text-left flex flex-col justify-center md:pr-8">
         <h2
           class="text-4xl md:text-6xl font-bold mb-4 mt-8 text-[rgb(11,65,88)]"
         >
@@ -39,27 +44,71 @@ import ResidencialIndustiaSection from "../components/Residencial-Industria/Resi
         <p class="text-lg md:text-xl text-gray-700">
           No es lujosa, pero sí muy valiosa
         </p>
-            </div>
-            <div class="md:w-1/2 flex justify-center mt-8 md:mt-0">
-                <Image
-                        width={400}
-                        height={1080}
-                        src={vasoagua}
-                        alt="Sé como el agua"
-                        loading="eager"
-                        class="max-w-full h-auto"
-                />
-            </div>
-        </div>
+      </div>
+      <div class="md:w-1/2 flex justify-center mt-8 md:mt-0">
+        <Image
+          width={400}
+          height={1080}
+          src={vasoagua}
+          alt="Sé como el agua"
+          loading="eager"
+          class="max-w-full h-auto"
+        />
+      </div>
     </div>
+  </div>
 
-    <MobileVideoHd />
-  <Logo3 id="logo3" />
-  <Logo4 id="logo4" />
-  <Logo5 id="logo5" />
-  <Logo6 id="logo6" />
-  <Logo7 id="logo7" />
-  <Logo8 id="logo8" />
+  <MobileVideoHd />
+
+  <Image
+    id="pagina3"
+    src={pagina3}
+    alt="pagina3"
+    width={1920}
+    height={1080}
+    class="w-screen object-fill"
+  />
+  <Image
+    id="pagina4"
+    src={pagina4}
+    alt="pagina4"
+    width={1920}
+    height={1080}
+    class="w-screen object-fill"
+  />
+  <Image
+    id="pagina5"
+    src={pagina5}
+    alt="pagina5"
+    width={1920}
+    height={1080}
+    class="w-screen object-fill"
+  />
+  <Image
+    id="pagina6"
+    src={pagina6}
+    alt="pagina6"
+    width={1920}
+    height={1080}
+    class="w-screen object-fill"
+  />
+  <Image
+    id="pagina7"
+    src={pagina7}
+    alt="pagina7"
+    width={1920}
+    height={1080}
+    class="w-screen object-fill"
+  />
+  <Image
+    id="pagina8"
+    src={pagina8}
+    alt="pagina8"
+    width={1920}
+    height={1080}
+    class="w-screen object-fill"
+  />
+
   <Logo9 id="logo9" />
   <Logo10 id="logo10" />
 
