@@ -1,10 +1,11 @@
 // @ts-check
 import { defineConfig } from 'astro/config';
-
+import sitemap from '@astrojs/sitemap';
 import tailwindcss from '@tailwindcss/vite';
 
 // https://astro.build/config
 export default defineConfig({
+    site: 'https://www.bluedrop.com', // Actualiza con tu dominio real
     experimental: {
         csp: true,
     },
@@ -12,4 +13,12 @@ export default defineConfig({
     vite: {
         plugins: [tailwindcss()],
     },
+
+    integrations: [
+        sitemap({
+            changefreq: 'weekly',
+            priority: 0.7,
+            lastmod: new Date(),
+        }),
+    ],
 });

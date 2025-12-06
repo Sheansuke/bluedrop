@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+
+# Sitemap (actualiza con tu dominio real)
+# Sitemap: https://www.tudominio.com/sitemap.xml
+
+# Crawl-delay
+Crawl-delay: 1
+

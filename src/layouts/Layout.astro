@@ -1,15 +1,168 @@
 ---
 import "../styles/global.css";
+
+interface Props {
+  title?: string;
+  description?: string;
+  image?: string;
+  type?: string;
+  url?: string;
+}
+
+const {
+  title = "BlueDrop SRL - Soluciones de Agua Limpia y Servicios de Piscinas en República Dominicana",
+  description = "BlueDrop SRL ofrece servicios profesionales de agua limpia, instalación, mantenimiento de piscinas, venta de equipos y accesorios en República Dominicana. Agua limpia, vida segura.",
+  image = "/favicon.svg",
+  type = "website",
+  url = Astro.url.href,
+} = Astro.props;
+
+const siteUrl = new URL(Astro.url.pathname, Astro.site || Astro.url.origin).href;
+const fullImageUrl = image.startsWith('http') ? image : new URL(image, siteUrl).href;
 ---
 
 <!doctype html>
-<html lang="en" class="scroll-smooth">
+<html lang="es" class="scroll-smooth">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
-    <title>BlueDrop</title>
+    
+    <!-- Primary Meta Tags -->
+    <title>{title}</title>
+    <meta name="title" content={title} />
+    <meta name="description" content={description} />
+    <meta name="keywords" content="BlueDrop, agua limpia, piscinas, jacuzzis, instalación piscinas, mantenimiento piscinas, equipos piscinas, accesorios piscinas, República Dominicana, agua potable, tratamiento de agua, servicios residenciales, servicios industriales, minerales piscinas, remodelación espacios, BlueDrop SRL" />
+    <meta name="author" content="BlueDrop SRL" />
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+    <meta name="language" content="Spanish" />
+    <meta name="geo.region" content="DO" />
+    <meta name="geo.placename" content="Santo Domingo, República Dominicana" />
+    <link rel="canonical" href={url} />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content={type} />
+    <meta property="og:url" content={url} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={fullImageUrl} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:locale" content="es_DO" />
+    <meta property="og:site_name" content="BlueDrop SRL" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content={url} />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={fullImageUrl} />
+    <meta name="twitter:creator" content="@bluedroprd" />
+
+    <!-- Schema.org structured data -->
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "BlueDrop SRL",
+      "image": fullImageUrl,
+      "@id": siteUrl,
+      "url": siteUrl,
+      "telephone": "+1 (849) 584-7374",
+      "email": "bluedropventas@gmail.com",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Av. Charles Summer #19B Plaza Lesmar local 203 segundo nivel",
+        "addressLocality": "Los Prados",
+        "addressRegion": "Santo Domingo",
+        "addressCountry": "DO"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": "18.4861",
+        "longitude": "-69.9312"
+      },
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday",
+          "Saturday"
+        ],
+        "opens": "08:00",
+        "closes": "18:00"
+      },
+      "priceRange": "$$",
+      "description": description,
+      "sameAs": [
+        "https://www.instagram.com/bluedroprd/"
+      ],
+      "areaServed": {
+        "@type": "Country",
+        "name": "República Dominicana"
+      },
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Servicios de Agua y Piscinas",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Instalación de Sistemas de Agua",
+              "description": "Instalación profesional de sistemas de agua y piscinas"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Venta de Accesorios y Equipos",
+              "description": "Venta de accesorios y equipos para piscinas y sistemas de agua"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Remodelación de Espacios",
+              "description": "Remodelación profesional de espacios relacionados con agua y piscinas"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Mantenimiento en General",
+              "description": "Servicios de mantenimiento para piscinas y sistemas de agua"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Minerales y Suministros",
+              "description": "Venta de minerales y suministros para piscinas"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Servicios de Piscinas y Jacuzzis",
+              "description": "Servicios especializados para piscinas y jacuzzis"
+            }
+          }
+        ]
+      }
+    })} />
+
+    <!-- Additional SEO -->
+    <meta name="theme-color" content="#008cc7" />
+    <meta name="msapplication-TileColor" content="#008cc7" />
   </head>
   <body class="scroll-smooth">
     <slot />

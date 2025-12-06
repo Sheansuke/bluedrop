@@ -16,7 +16,7 @@ import heroVideo from "../../assets/hero-videov2.mp4";
   }
 </style>
 
-<section class="relative w-full h-screen overflow-hidden z-10">
+<section class="relative w-full h-screen overflow-hidden z-10" aria-label="Hero section - BlueDrop SRL">
   {/* Left Content */}
   <div
     class="relative z-10 w-full flex items-center px-8 bg-gradient-to-b from-blue-100 via-blue-200 to-blue-300 md:bg-none "
@@ -63,10 +63,11 @@ import heroVideo from "../../assets/hero-videov2.mp4";
         playsinline
         preload="metadata"
         muted
+        aria-label="Video promocional de servicios de agua y piscinas de BlueDrop SRL"
       >
        
         <source src={heroVideo} type="video/mp4" />
-        Your browser does not support the video tag.
+        Tu navegador no soporta el tag de video.
       </video>
       
       {/* Play/Pause Button */}

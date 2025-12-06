@@ -25,93 +25,126 @@ import Layout from "../layouts/Layout.astro";
 import ResidencialIndustiaSection from "../components/Residencial-Industria/ResidencialIndustiaSection.astro";
 ---
 
-<Layout>
+<Layout 
+  title="BlueDrop SRL - Soluciones de Agua Limpia y Servicios de Piscinas en República Dominicana"
+  description="BlueDrop SRL ofrece servicios profesionales de agua limpia, instalación y mantenimiento de piscinas, venta de equipos y accesorios en República Dominicana. Agua limpia, vida segura. Soluciones sostenibles para hoy y el futuro."
+>
   <Navbar />
-  <Hero />
+  
+  <main>
+    <Hero />
 
-  <Menu />
+    <Menu />
 
-  <div class="container mx-auto flex justify-center">
-    <div
-      class="flex flex-col md:flex-row items-center md:items-start justify-between w-full mb-36"
-    >
-      <div class="md:w-1/2 text-left flex flex-col justify-center md:pr-8">
-        <h2
-          class="text-4xl md:text-6xl font-bold mb-4 mt-8 text-[rgb(11,65,88)]"
-        >
-          Sé como el agua
-        </h2>
-        <p class="text-lg md:text-xl text-gray-700">
-          No es lujosa, pero sí muy valiosa
-        </p>
+    <section class="container mx-auto flex justify-center" aria-label="Filosofía de BlueDrop">
+      <div
+        class="flex flex-col md:flex-row items-center md:items-start justify-between w-full mb-36"
+      >
+        <div class="md:w-1/2 text-left flex flex-col justify-center md:pr-8">
+          <h2
+            class="text-4xl md:text-6xl font-bold mb-4 mt-8 text-[rgb(11,65,88)]"
+          >
+            Sé como el agua
+          </h2>
+          <p class="text-lg md:text-xl text-gray-700">
+            No es lujosa, pero sí muy valiosa
+          </p>
+        </div>
+        <div class="md:w-1/2 flex justify-center mt-8 md:mt-0">
+          <Image
+            width={400}
+            height={1080}
+            src={vasoagua}
+            alt="Vaso de agua limpia - BlueDrop SRL promueve el cuidado del agua para una vida saludable"
+            loading="eager"
+            class="max-w-full h-auto"
+          />
+        </div>
       </div>
-      <div class="md:w-1/2 flex justify-center mt-8 md:mt-0">
-        <Image
-          width={400}
-          height={1080}
-          src={vasoagua}
-          alt="Sé como el agua"
-          loading="eager"
-          class="max-w-full h-auto"
-        />
+    </section>
+
+    <MobileVideoHd />
+
+    <section aria-label="Servicios de instalación de sistemas de agua">
+      <Image
+        id="pagina3"
+        src={pagina3}
+        alt="Servicios de instalación profesional de sistemas de agua y piscinas - BlueDrop SRL"
+        width={1920}
+        height={1080}
+        class="w-screen object-fill"
+      />
+    </section>
+    
+    <section aria-label="Venta de accesorios y equipos para piscinas">
+      <Image
+        id="pagina4"
+        src={pagina4}
+        alt="Venta de accesorios y equipos para piscinas y sistemas de agua - BlueDrop SRL"
+        width={1920}
+        height={1080}
+        class="w-screen object-fill"
+      />
+    </section>
+    
+    <section aria-label="Remodelación de espacios relacionados con agua">
+      <Image
+        id="pagina5"
+        src={pagina5}
+        alt="Servicios de remodelación de espacios relacionados con agua y piscinas - BlueDrop SRL"
+        width={1920}
+        height={1080}
+        class="w-screen object-fill"
+      />
+    </section>
+    
+    <section aria-label="Mantenimiento general de piscinas y sistemas de agua">
+      <Image
+        id="pagina6"
+        src={pagina6}
+        alt="Servicios de mantenimiento general para piscinas y sistemas de agua - BlueDrop SRL"
+        width={1920}
+        height={1080}
+        class="w-screen object-fill"
+      />
+    </section>
+    
+    <section aria-label="Servicios adicionales de BlueDrop">
+      <Image
+        id="pagina7"
+        src={pagina7}
+        alt="Servicios profesionales de agua y piscinas en República Dominicana - BlueDrop SRL"
+        width={1920}
+        height={1080}
+        class="w-screen object-fill"
+      />
+    </section>
+    
+    <section aria-label="Soluciones integrales de agua">
+      <Image
+        id="pagina8"
+        src={pagina8}
+        alt="Soluciones integrales de agua limpia y sistemas de piscinas - BlueDrop SRL"
+        width={1920}
+        height={1080}
+        class="w-screen object-fill"
+      />
+    </section>
+
+    <section aria-label="Minerales y suministros para piscinas">
+      <div id="logo9" role="img" aria-label="Minerales y suministros para piscinas - BlueDrop SRL">
+        <Logo9 class="w-screen" />
       </div>
-    </div>
-  </div>
+    </section>
+    
+    <section aria-label="Servicios de piscinas y jacuzzis">
+      <div id="logo10" role="img" aria-label="Servicios especializados de piscinas y jacuzzis - BlueDrop SRL">
+        <Logo10 class="w-screen" />
+      </div>
+    </section>
 
-  <MobileVideoHd />
-
-  <Image
-    id="pagina3"
-    src={pagina3}
-    alt="pagina3"
-    width={1920}
-    height={1080}
-    class="w-screen object-fill"
-  />
-  <Image
-    id="pagina4"
-    src={pagina4}
-    alt="pagina4"
-    width={1920}
-    height={1080}
-    class="w-screen object-fill"
-  />
-  <Image
-    id="pagina5"
-    src={pagina5}
-    alt="pagina5"
-    width={1920}
-    height={1080}
-    class="w-screen object-fill"
-  />
-  <Image
-    id="pagina6"
-    src={pagina6}
-    alt="pagina6"
-    width={1920}
-    height={1080}
-    class="w-screen object-fill"
-  />
-  <Image
-    id="pagina7"
-    src={pagina7}
-    alt="pagina7"
-    width={1920}
-    height={1080}
-    class="w-screen object-fill"
-  />
-  <Image
-    id="pagina8"
-    src={pagina8}
-    alt="pagina8"
-    width={1920}
-    height={1080}
-    class="w-screen object-fill"
-  />
-
-  <Logo9 id="logo9" />
-  <Logo10 id="logo10" />
-
-  <ResidencialIndustiaSection />
+    <ResidencialIndustiaSection />
+  </main>
+  
   <Footer />
 </Layout>
