@@ -5,7 +5,7 @@ import tailwindcss from '@tailwindcss/vite';
 
 // https://astro.build/config
 export default defineConfig({
-    site: 'https://www.bluedroprd.com', 
+    site: 'https://www.bluedrop.com', // Actualiza con tu dominio real
     experimental: {
         csp: true,
     },
