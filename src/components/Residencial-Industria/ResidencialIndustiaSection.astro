@@ -9,9 +9,13 @@ import industrial4 from "../../assets/industrial4.jpg";
 import { Image } from "astro:assets";
 ---
 
-<section class="w-full shadow-[0_20px_50px_rgba(0,140,199,0.4)] relative" aria-label="Servicios residenciales e industriales">
-  <div class="bg-[#231f20] h-38 flex justify-center items-center">
-    <h2 class="text-6xl text-white text-center">Residencial e Industrial</h2>
+<section id="residencial-industrial-home" class="w-full shadow-[0_20px_50px_rgba(0,140,199,0.4)] relative" aria-labelledby="residencial-industrial-heading">
+  <div class="bg-[#231f20] h-38 flex flex-col justify-center items-center px-4 py-8">
+    <h2 id="residencial-industrial-heading" class="text-4xl md:text-6xl text-white text-center">Residencial e Industrial</h2>
+    <p class="mt-4 max-w-4xl text-center text-lg text-gray-200 md:text-2xl">
+      Tratamiento de agua para hogares, comercios e industrias. Equipos de bombeo
+      e instalaciones completas en República Dominicana.
+    </p>
   </div>
 
   <!-- CONTENT -->

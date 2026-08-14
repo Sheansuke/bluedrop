@@ -19,6 +19,17 @@ export default defineConfig({
             changefreq: 'weekly',
             priority: 0.7,
             lastmod: new Date(),
+            serialize(item) {
+                const url = item.url.replace(/\/$/, '')
+
+                if (url.endsWith('/tratamiento-de-agua')) {
+                    item.priority = 1.0
+                } else if (url === 'https://www.bluedroprd.com') {
+                    item.priority = 0.9
+                }
+
+                return item
+            },
         }),
     ],
 });

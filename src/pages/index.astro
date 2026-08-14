@@ -7,13 +7,6 @@ import pagina5 from "../assets/pagina5.jpg";
 import pagina6 from "../assets/pagina6.jpg";
 import pagina7 from "../assets/pagina7.jpg";
 import pagina8 from "../assets/pagina8.jpg";
-import pagina9 from "../assets/pagina9.jpg";
-import pagina10 from "../assets/pagina10.jpg";
-import Logo4 from "../assets/pagina4.svg";
-import Logo5 from "../assets/pagina5.svg";
-import Logo6 from "../assets/pagina6.svg";
-import Logo7 from "../assets/pagina7.svg";
-import Logo8 from "../assets/pagina8.svg";
 import Logo9 from "../assets/pagina9.svg";
 import vasoagua from "../assets/vasoaguav3.png";
 import Footer from "../components/Footer/Footer.astro";
@@ -25,9 +18,9 @@ import Layout from "../layouts/Layout.astro";
 import ResidencialIndustiaSection from "../components/Residencial-Industria/ResidencialIndustiaSection.astro";
 ---
 
-<Layout 
-  title="BlueDrop SRL - Soluciones de Agua Limpia y Servicios de Piscinas en República Dominicana"
-  description="BlueDrop SRL ofrece servicios profesionales de agua limpia, instalación y mantenimiento de piscinas, venta de equipos y accesorios en República Dominicana. Agua limpia, vida segura. Soluciones sostenibles para hoy y el futuro."
+<Layout
+  title="BlueDrop SRL | Aliados del agua en República Dominicana"
+  description="Más que una compañía, somos tus aliados. BlueDrop SRL ofrece tratamiento de agua, equipos y mantenimiento para hogares e industrias en Santo Domingo, RD."
 >
   <Navbar />
   
@@ -46,8 +39,21 @@ import ResidencialIndustiaSection from "../components/Residencial-Industria/Resi
           >
             Sé como el agua
           </h2>
+          <p class="text-lg md:text-xl text-gray-700 mb-4">
+            Somos aliados de un recurso tan transparente como lo es el agua.
+          </p>
+          <p class="text-lg md:text-xl text-gray-700 mb-4">
+            No es lujosa, pero sí muy valiosa.
+          </p>
           <p class="text-lg md:text-xl text-gray-700">
-            No es lujosa, pero sí muy valiosa
+            Más que una compañía, somos tus aliados en el
+            <a
+              href="/tratamiento-de-agua"
+              class="font-semibold text-[#008cc7] hover:underline"
+            >
+              tratamiento de agua
+            </a>
+            para hogares e industrias en República Dominicana.
           </p>
         </div>
         <div class="md:w-1/2 flex justify-center mt-8 md:mt-0">
@@ -55,7 +61,7 @@ import ResidencialIndustiaSection from "../components/Residencial-Industria/Resi
             width={400}
             height={1080}
             src={vasoagua}
-            alt="Vaso de agua limpia - BlueDrop SRL promueve el cuidado del agua para una vida saludable"
+            alt="Vaso de agua limpia, símbolo del tratamiento de agua de BlueDrop SRL en República Dominicana"
             loading="eager"
             class="max-w-full h-auto"
           />
@@ -65,79 +71,151 @@ import ResidencialIndustiaSection from "../components/Residencial-Industria/Resi
 
     <MobileVideoHd />
 
-    <section aria-label="Servicios de instalación de sistemas de agua">
+    <section aria-labelledby="instalacion-heading">
+      <div class="container mx-auto px-6 py-8 md:px-12">
+        <h2 id="instalacion-heading" class="text-2xl md:text-4xl font-bold text-[rgb(11,65,88)]">
+          Instalación de sistemas de tratamiento de agua
+        </h2>
+        <p class="mt-2 text-lg text-gray-700">
+          Instalación profesional de sistemas de tratamiento de agua y piscinas
+          para hogares, comercios e industrias en República Dominicana.
+        </p>
+      </div>
       <Image
         id="pagina3"
         src={pagina3}
-        alt="Servicios de instalación profesional de sistemas de agua y piscinas - BlueDrop SRL"
-        width={1920}
-        height={1080}
-        class="w-screen object-fill"
-      />
-    </section>
-    
-    <section aria-label="Venta de accesorios y equipos para piscinas">
-      <Image
-        id="pagina4"
-        src={pagina4}
-        alt="Venta de accesorios y equipos para piscinas y sistemas de agua - BlueDrop SRL"
-        width={1920}
-        height={1080}
-        class="w-screen object-fill"
-      />
-    </section>
-    
-    <section aria-label="Remodelación de espacios relacionados con agua">
-      <Image
-        id="pagina5"
-        src={pagina5}
-        alt="Servicios de remodelación de espacios relacionados con agua y piscinas - BlueDrop SRL"
-        width={1920}
-        height={1080}
-        class="w-screen object-fill"
-      />
-    </section>
-    
-    <section aria-label="Mantenimiento general de piscinas y sistemas de agua">
-      <Image
-        id="pagina6"
-        src={pagina6}
-        alt="Servicios de mantenimiento general para piscinas y sistemas de agua - BlueDrop SRL"
-        width={1920}
-        height={1080}
-        class="w-screen object-fill"
-      />
-    </section>
-    
-    <section aria-label="Servicios adicionales de BlueDrop">
-      <Image
-        id="pagina7"
-        src={pagina7}
-        alt="Servicios profesionales de agua y piscinas en República Dominicana - BlueDrop SRL"
-        width={1920}
-        height={1080}
-        class="w-screen object-fill"
-      />
-    </section>
-    
-    <section aria-label="Soluciones integrales de agua">
-      <Image
-        id="pagina8"
-        src={pagina8}
-        alt="Soluciones integrales de agua limpia y sistemas de piscinas - BlueDrop SRL"
+        alt="Instalación profesional de sistemas de tratamiento de agua y piscinas - BlueDrop SRL"
         width={1920}
         height={1080}
         class="w-screen object-fill"
       />
     </section>
 
-    <section aria-label="Minerales y suministros para piscinas">
-      <div id="logo9" role="img" aria-label="Minerales y suministros para piscinas - BlueDrop SRL">
+    <section aria-labelledby="equipos-heading">
+      <div class="container mx-auto px-6 py-8 md:px-12">
+        <h2 id="equipos-heading" class="text-2xl md:text-4xl font-bold text-[rgb(11,65,88)]">
+          Equipos y accesorios para tratamiento de agua
+        </h2>
+        <p class="mt-2 text-lg text-gray-700">
+          Venta de equipos, bombas y accesorios para tratamiento de agua,
+          purificación y sistemas de piscinas.
+        </p>
+      </div>
+      <Image
+        id="pagina4"
+        src={pagina4}
+        alt="Venta de equipos y accesorios para tratamiento de agua y piscinas - BlueDrop SRL"
+        width={1920}
+        height={1080}
+        class="w-screen object-fill"
+      />
+    </section>
+
+    <section aria-labelledby="remodelacion-heading">
+      <div class="container mx-auto px-6 py-8 md:px-12">
+        <h2 id="remodelacion-heading" class="text-2xl md:text-4xl font-bold text-[rgb(11,65,88)]">
+          Remodelación de espacios
+        </h2>
+        <p class="mt-2 text-lg text-gray-700">
+          Remodelación de espacios relacionados con agua, piscinas y sistemas de
+          tratamiento de agua.
+        </p>
+      </div>
+      <Image
+        id="pagina5"
+        src={pagina5}
+        alt="Remodelación de espacios relacionados con tratamiento de agua y piscinas - BlueDrop SRL"
+        width={1920}
+        height={1080}
+        class="w-screen object-fill"
+      />
+    </section>
+
+    <section aria-labelledby="mantenimiento-heading">
+      <div class="container mx-auto px-6 py-8 md:px-12">
+        <h2 id="mantenimiento-heading" class="text-2xl md:text-4xl font-bold text-[rgb(11,65,88)]">
+          Mantenimiento de tratamiento de agua
+        </h2>
+        <p class="mt-2 text-lg text-gray-700">
+          Mantenimiento preventivo y correctivo para sistemas de tratamiento de
+          agua, piscinas y equipos de bombeo.
+        </p>
+      </div>
+      <Image
+        id="pagina6"
+        src={pagina6}
+        alt="Mantenimiento de sistemas de tratamiento de agua y piscinas - BlueDrop SRL"
+        width={1920}
+        height={1080}
+        class="w-screen object-fill"
+      />
+    </section>
+
+    <section aria-labelledby="servicios-adicionales-heading">
+      <div class="container mx-auto px-6 py-8 md:px-12">
+        <h2 id="servicios-adicionales-heading" class="text-2xl md:text-4xl font-bold text-[rgb(11,65,88)]">
+          Servicios profesionales de agua
+        </h2>
+        <p class="mt-2 text-lg text-gray-700">
+          Más que una compañía, somos tus aliados para el tratamiento de agua y
+          los servicios de piscinas en República Dominicana.
+        </p>
+      </div>
+      <Image
+        id="pagina7"
+        src={pagina7}
+        alt="Servicios profesionales de tratamiento de agua y piscinas en República Dominicana - BlueDrop SRL"
+        width={1920}
+        height={1080}
+        class="w-screen object-fill"
+      />
+    </section>
+
+    <section aria-labelledby="soluciones-integrales-heading">
+      <div class="container mx-auto px-6 py-8 md:px-12">
+        <h2 id="soluciones-integrales-heading" class="text-2xl md:text-4xl font-bold text-[rgb(11,65,88)]">
+          Soluciones integrales de tratamiento de agua
+        </h2>
+        <p class="mt-2 text-lg text-gray-700">
+          Somos aliados de un recurso tan transparente como lo es el agua:
+          diagnóstico, instalación, equipos y seguimiento.
+        </p>
+      </div>
+      <Image
+        id="pagina8"
+        src={pagina8}
+        alt="Soluciones integrales de tratamiento de agua y sistemas de piscinas - BlueDrop SRL"
+        width={1920}
+        height={1080}
+        class="w-screen object-fill"
+      />
+    </section>
+
+    <section aria-labelledby="minerales-heading">
+      <div class="container mx-auto px-6 py-8 md:px-12">
+        <h2 id="minerales-heading" class="text-2xl md:text-4xl font-bold text-[rgb(11,65,88)]">
+          Minerales y suministros
+        </h2>
+        <p class="mt-2 text-lg text-gray-700">
+          Minerales y suministros para piscinas y sistemas de agua, con el
+          respaldo de BlueDrop SRL.
+        </p>
+      </div>
+      <div id="logo9" role="img" aria-label="Minerales y suministros para piscinas y tratamiento de agua - BlueDrop SRL">
         <Logo9 class="w-screen" />
       </div>
     </section>
-    
-    <section aria-label="Servicios de piscinas y jacuzzis">
+
+    <section aria-labelledby="piscinas-heading">
+      <div class="container mx-auto px-6 py-8 md:px-12">
+        <h2 id="piscinas-heading" class="text-2xl md:text-4xl font-bold text-[rgb(11,65,88)]">
+          Servicios de piscinas y jacuzzis
+        </h2>
+        <p class="mt-2 text-lg text-gray-700">
+          Complementamos el tratamiento de agua con instalación y mantenimiento
+          de piscinas y jacuzzis.
+        </p>
+      </div>
       <div id="logo10" role="img" aria-label="Servicios especializados de piscinas y jacuzzis - BlueDrop SRL">
         <Logo10 class="w-screen" />
       </div>
