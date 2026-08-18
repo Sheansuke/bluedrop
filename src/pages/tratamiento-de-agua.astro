@@ -85,7 +85,7 @@ const extraJsonLd = {
     >
       <div class="container mx-auto grid items-center gap-12 md:grid-cols-2">
         <div>
-          <p class="mb-4 text-lg font-medium uppercase tracking-wide text-[#008cc7] md:text-xl">
+          <p class="mb-4 text-lg font-medium uppercase tracking-wide text-brand md:text-xl">
             BlueDrop SRL
           </p>
           <h1
@@ -105,7 +105,7 @@ const extraJsonLd = {
           <div class="flex flex-wrap gap-4">
             <a
               href="tel:+18495847374"
-              class="rounded-lg bg-[#008cc7] px-6 py-3 text-lg font-semibold text-white hover:bg-[#0077a8]"
+              class="rounded-lg bg-brand px-6 py-3 text-lg font-semibold text-white hover:bg-brand-hover"
             >
               Llamar +1 (849) 584-7374
             </a>
@@ -113,7 +113,7 @@ const extraJsonLd = {
               href="https://wa.me/18495847374"
               target="_blank"
               rel="noopener noreferrer"
-              class="rounded-lg border-2 border-[#008cc7] px-6 py-3 text-lg font-semibold text-[#008cc7] hover:bg-blue-50"
+              class="rounded-lg border-2 border-brand px-6 py-3 text-lg font-semibold text-brand hover:bg-blue-50"
             >
               WhatsApp
             </a>
@@ -126,6 +126,7 @@ const extraJsonLd = {
             width={420}
             height={1080}
             loading="eager"
+            fetchpriority="high"
             class="max-w-full h-auto"
           />
         </div>
@@ -198,7 +199,7 @@ const extraJsonLd = {
           </p>
           <a
             href="/#residencial-industrial-home"
-            class="text-lg font-semibold text-[#008cc7] hover:underline"
+            class="text-lg font-semibold text-brand-on-dark hover:underline"
           >
             Ver proyectos residenciales e industriales
           </a>
@@ -209,6 +210,8 @@ const extraJsonLd = {
             alt="Equipos de bombeo para tratamiento de agua residencial e industrial - BlueDrop SRL"
             width={500}
             height={500}
+            widths={[305, 500]}
+            sizes="(max-width: 768px) 50vw, 250px"
             class="h-auto w-full rounded-lg object-cover"
           />
           <Image
@@ -216,6 +219,8 @@ const extraJsonLd = {
             alt="Instalación industrial de tratamiento de agua en República Dominicana - BlueDrop SRL"
             width={500}
             height={500}
+            widths={[305, 500]}
+            sizes="(max-width: 768px) 50vw, 250px"
             class="h-auto w-full rounded-lg object-cover"
           />
         </div>
@@ -262,7 +267,7 @@ const extraJsonLd = {
       <div class="flex flex-wrap justify-center gap-4">
         <a
           href="tel:+18495847374"
-          class="rounded-lg bg-[#008cc7] px-6 py-3 text-lg font-semibold text-white hover:bg-[#0077a8]"
+          class="rounded-lg bg-brand px-6 py-3 text-lg font-semibold text-white hover:bg-brand-hover"
         >
           +1 (849) 584-7374
         </a>
