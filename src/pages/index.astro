@@ -1,13 +1,13 @@
 ---
 import { Image } from "astro:assets";
-import Logo10 from "../assets/pagina10.svg";
 import pagina3 from "../assets/pagina3.jpg";
 import pagina4 from "../assets/pagina4.jpg";
 import pagina5 from "../assets/pagina5.jpg";
 import pagina6 from "../assets/pagina6.jpg";
 import pagina7 from "../assets/pagina7.jpg";
 import pagina8 from "../assets/pagina8.jpg";
-import Logo9 from "../assets/pagina9.svg";
+import pagina9 from "../assets/pagina9.webp";
+import pagina10 from "../assets/pagina10.webp";
 import vasoagua from "../assets/vasoaguav3.png";
 import Footer from "../components/Footer/Footer.astro";
 import Hero from "../components/Hero/Hero.astro";
@@ -62,7 +62,7 @@ import ResidencialIndustiaSection from "../components/Residencial-Industria/Resi
             height={1080}
             src={vasoagua}
             alt="Vaso de agua limpia, símbolo del tratamiento de agua de BlueDrop SRL en República Dominicana"
-            loading="eager"
+            loading="lazy"
             class="max-w-full h-auto"
           />
         </div>
@@ -201,9 +201,14 @@ import ResidencialIndustiaSection from "../components/Residencial-Industria/Resi
           respaldo de BlueDrop SRL.
         </p>
       </div>
-      <div id="logo9" role="img" aria-label="Minerales y suministros para piscinas y tratamiento de agua - BlueDrop SRL">
-        <Logo9 class="w-screen" />
-      </div>
+      <Image
+        id="logo9"
+        src={pagina9}
+        alt="Minerales y suministros para piscinas y tratamiento de agua - BlueDrop SRL"
+        width={1920}
+        height={1080}
+        class="w-screen object-fill"
+      />
     </section>
 
     <section aria-labelledby="piscinas-heading">
@@ -216,9 +221,14 @@ import ResidencialIndustiaSection from "../components/Residencial-Industria/Resi
           de piscinas y jacuzzis.
         </p>
       </div>
-      <div id="logo10" role="img" aria-label="Servicios especializados de piscinas y jacuzzis - BlueDrop SRL">
-        <Logo10 class="w-screen" />
-      </div>
+      <Image
+        id="logo10"
+        src={pagina10}
+        alt="Servicios especializados de piscinas y jacuzzis - BlueDrop SRL"
+        width={1920}
+        height={1250}
+        class="w-screen object-fill"
+      />
     </section>
 
     <ResidencialIndustiaSection />

@@ -1,0 +1,128 @@
+---
+import heroPoster from "../../assets/hero-poster.webp"
+import heroVideo from "../../assets/hero-promo.mp4"
+
+interface Props {
+  variant: "hero" | "full"
+}
+
+const { variant } = Astro.props
+const isHero = variant === "hero"
+---
+
+<div
+  class="relative h-full w-full"
+  data-promo-root
+>
+  <video
+    class:list={[
+      "h-full w-full cursor-pointer object-cover",
+      isHero && "mx-auto",
+    ]}
+    data-promo-video
+    data-src={heroVideo}
+    poster={heroPoster.src}
+    preload="none"
+    playsinline
+    loop
+    muted
+    aria-label="Video promocional de tratamiento de agua y servicios de BlueDrop SRL"
+  >
+    Tu navegador no soporta el tag de video.
+  </video>
+
+  <button
+    type="button"
+    data-promo-play
+    class:list={[
+      isHero
+        ? "absolute top-1/2 left-1/2 z-50 -translate-x-1/2 -translate-y-1/2 rounded-full bg-black/50 p-4 text-white transition-all duration-300 hover:bg-black/70"
+        : "absolute top-1/2 left-1/2 z-[100] -translate-x-1/2 -translate-y-1/2 cursor-pointer rounded-full bg-white/90 p-6 shadow-lg transition-all duration-300 hover:bg-white",
+    ]}
+    aria-label="Reproducir video"
+  >
+    <svg
+      class:list={[isHero ? "h-8 w-8" : "h-12 w-12 text-gray-800"]}
+      fill="currentColor"
+      viewBox="0 0 24 24"
+      aria-hidden="true"
+    >
+      <path d="M8 5v14l11-7z"></path>
+    </svg>
+  </button>
+</div>
+
+<script>
+  function bindPromoVideo(root: HTMLElement) {
+    const video = root.querySelector("[data-promo-video]") as HTMLVideoElement | null
+    const playBtn = root.querySelector("[data-promo-play]") as HTMLButtonElement | null
+
+    if (!video || !playBtn) return
+
+    const src = video.dataset.src
+    if (!src) return
+
+    function ensureSource() {
+      if (video.dataset.loaded === "true") {
+        return Promise.resolve()
+      }
+
+      return new Promise<void>((resolve, reject) => {
+        const onReady = () => {
+          video.dataset.loaded = "true"
+          resolve()
+        }
+
+        video.addEventListener("canplay", onReady, { once: true })
+        video.addEventListener("error", () => reject(new Error("No se pudo cargar el video")), {
+          once: true,
+        })
+        video.src = src
+        video.load()
+      })
+    }
+
+    async function playVideo() {
+      await ensureSource()
+      video.muted = false
+      await video.play()
+    }
+
+    function togglePlayPause() {
+      if (video.paused) {
+        void playVideo()
+      } else {
+        video.pause()
+      }
+    }
+
+    video.addEventListener("play", () => {
+      playBtn.classList.add("hidden")
+      playBtn.setAttribute("aria-label", "Pausar video")
+    })
+
+    video.addEventListener("pause", () => {
+      playBtn.classList.remove("hidden")
+      playBtn.setAttribute("aria-label", "Reproducir video")
+    })
+
+    video.addEventListener("click", (event) => {
+      event.preventDefault()
+      event.stopPropagation()
+      togglePlayPause()
+    })
+
+    playBtn.addEventListener("click", (event) => {
+      event.preventDefault()
+      event.stopPropagation()
+      togglePlayPause()
+    })
+  }
+
+  document.querySelectorAll("[data-promo-root]").forEach((node) => {
+    const root = node as HTMLElement
+    if (root.dataset.bound === "true") return
+    root.dataset.bound = "true"
+    bindPromoVideo(root)
+  })
+</script>
