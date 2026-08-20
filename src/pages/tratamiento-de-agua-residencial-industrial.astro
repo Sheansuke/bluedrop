@@ -1,0 +1,327 @@
+---
+import { Image } from "astro:assets"
+import bomba1 from "../assets/bomba1.jpg"
+import bomba2 from "../assets/bomba2.jpg"
+import industrial1 from "../assets/industrial1.jpg"
+import industrial3 from "../assets/industrial3.jpg"
+import Footer from "../components/Footer/Footer.astro"
+import Navbar from "../components/Navbar/Navbar.astro"
+import Layout from "../layouts/Layout.astro"
+
+const title =
+  "Tratamiento de agua residencial e industrial en RD | BlueDrop SRL"
+const description =
+  "Tratamiento de agua residencial en Santo Domingo e industrial en República Dominicana. Instalación, equipos y mantenimiento con BlueDrop SRL."
+
+const faqItems = [
+  {
+    question: "¿Qué diferencia hay entre tratamiento de agua residencial e industrial?",
+    answer:
+      "El residencial se dimensiona para viviendas y comercios: consumo diario, calidad del agua y protección de instalaciones domésticas. El industrial se adapta a caudales, procesos productivos y continuidad operativa en plantas o naves.",
+  },
+  {
+    question: "¿Instalan tratamiento de agua residencial en Santo Domingo?",
+    answer:
+      "Sí. Atendemos hogares y comercios en Santo Domingo con evaluación, instalación de sistemas de filtración o purificación, equipos y mantenimiento.",
+  },
+  {
+    question: "¿Hacen tratamiento de agua industrial en República Dominicana?",
+    answer:
+      "Sí. Diseñamos e instalamos soluciones de tratamiento de agua para usos productivos e instalaciones de mayor capacidad en República Dominicana, con seguimiento técnico.",
+  },
+]
+
+const extraJsonLd = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      itemListElement: [
+        {
+          "@type": "ListItem",
+          position: 1,
+          name: "Inicio",
+          item: "https://www.bluedroprd.com/",
+        },
+        {
+          "@type": "ListItem",
+          position: 2,
+          name: "Tratamiento de agua",
+          item: "https://www.bluedroprd.com/tratamiento-de-agua/",
+        },
+        {
+          "@type": "ListItem",
+          position: 3,
+          name: "Residencial e industrial",
+          item: "https://www.bluedroprd.com/tratamiento-de-agua-residencial-industrial/",
+        },
+      ],
+    },
+    {
+      "@type": "Service",
+      name: "Tratamiento de agua residencial e industrial",
+      serviceType: "Tratamiento de agua",
+      provider: {
+        "@type": "LocalBusiness",
+        name: "BlueDrop SRL",
+        telephone: "+1 (849) 584-7374",
+        email: "bluedropventas@gmail.com",
+      },
+      areaServed: [
+        { "@type": "City", name: "Santo Domingo" },
+        { "@type": "Country", name: "República Dominicana" },
+      ],
+      url: "https://www.bluedroprd.com/tratamiento-de-agua-residencial-industrial/",
+      description,
+    },
+    {
+      "@type": "FAQPage",
+      mainEntity: faqItems.map((item) => ({
+        "@type": "Question",
+        name: item.question,
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: item.answer,
+        },
+      })),
+    },
+  ],
+}
+---
+
+<Layout title={title} description={description} extraJsonLd={extraJsonLd}>
+  <Navbar
+    breadcrumbs={[
+      { label: "Inicio", href: "/" },
+      { label: "Tratamiento de agua", href: "/tratamiento-de-agua" },
+      { label: "Residencial e industrial" },
+    ]}
+  />
+
+  <main>
+    <section
+      class="bg-gradient-to-b from-blue-100 via-blue-50 to-white px-6 py-16 md:px-12 md:py-24"
+      aria-labelledby="ri-heading"
+    >
+      <div class="container mx-auto max-w-4xl">
+        <p class="mb-4 text-lg font-medium uppercase tracking-wide text-brand md:text-xl">
+          BlueDrop SRL · Santo Domingo y RD
+        </p>
+        <h1
+          id="ri-heading"
+          class="mb-6 text-4xl font-black uppercase leading-tight text-[rgb(11,65,88)] md:text-5xl lg:text-6xl"
+        >
+          Tratamiento de agua residencial e industrial
+        </h1>
+        <p class="mb-4 text-xl font-medium text-gray-800 md:text-2xl">
+          Más que una compañía, somos tus aliados en casa y en la planta
+        </p>
+        <p class="mb-8 text-lg text-gray-700 md:text-xl">
+          BlueDrop ofrece tratamiento de agua residencial en Santo Domingo y
+          soluciones industriales en República Dominicana: instalación, equipos
+          de bombeo y filtración, y mantenimiento según el uso de cada espacio.
+        </p>
+        <div class="flex flex-wrap gap-4">
+          <a
+            href="tel:+18495847374"
+            class="rounded-lg bg-brand px-6 py-3 text-lg font-semibold text-white hover:bg-brand-hover"
+          >
+            Llamar +1 (849) 584-7374
+          </a>
+          <a
+            href="https://wa.me/18495847374"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="rounded-lg border-2 border-brand px-6 py-3 text-lg font-semibold text-brand hover:bg-blue-50"
+          >
+            WhatsApp
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="container mx-auto px-6 py-16 md:px-12" aria-labelledby="residencial-heading">
+      <div class="grid items-center gap-10 md:grid-cols-2">
+        <div>
+          <h2
+            id="residencial-heading"
+            class="mb-4 text-3xl font-bold text-[rgb(11,65,88)] md:text-5xl"
+          >
+            Tratamiento de agua residencial en Santo Domingo
+          </h2>
+          <p class="mb-4 text-lg text-gray-700 md:text-xl">
+            Para viviendas y comercios necesitamos agua más segura, menos
+            problemas en tuberías y equipos que duren. Diseñamos sistemas de
+            tratamiento de agua residencial con filtración, purificación y
+            bombeo adaptados al consumo diario.
+          </p>
+          <p class="mb-4 text-lg text-gray-700 md:text-xl">
+            Incluye evaluación en sitio o remota, instalación profesional y
+            opciones de mantenimiento en Santo Domingo. Ideal si buscas mejorar
+            la calidad del agua en casa, apartamento, local o pequeño negocio.
+          </p>
+          <a
+            href="/tratamiento-de-agua-santo-domingo"
+            class="font-semibold text-brand hover:underline md:text-lg"
+          >
+            Ver cobertura en Santo Domingo
+          </a>
+        </div>
+        <div class="grid grid-cols-2 gap-4">
+          <Image
+            src={bomba1}
+            alt="Equipos de bombeo para tratamiento de agua residencial en Santo Domingo - BlueDrop SRL"
+            width={500}
+            height={500}
+            widths={[305, 500]}
+            sizes="(max-width: 768px) 50vw, 250px"
+            class="h-auto w-full rounded-lg object-cover"
+          />
+          <Image
+            src={bomba2}
+            alt="Sistema de bombeo residencial BlueDrop en República Dominicana"
+            width={300}
+            height={500}
+            class="h-auto w-full rounded-lg object-cover"
+          />
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-[#231f20] px-6 py-16 text-white md:px-12" aria-labelledby="industrial-heading">
+      <div class="container mx-auto grid items-center gap-10 md:grid-cols-2">
+        <Image
+          src={industrial1}
+          alt="Tratamiento de agua industrial en República Dominicana - BlueDrop SRL"
+          width={800}
+          height={500}
+          class="h-auto w-full rounded-xl object-cover order-2 md:order-1"
+        />
+        <div class="order-1 md:order-2">
+          <h2 id="industrial-heading" class="mb-4 text-3xl font-bold md:text-5xl">
+            Tratamiento de agua industrial en República Dominicana
+          </h2>
+          <p class="mb-4 text-lg text-gray-200 md:text-xl">
+            Las plantas e instalaciones productivas requieren continuidad,
+            caudales mayores y equipos robustos. BlueDrop instala y mantiene
+            sistemas de tratamiento de agua industrial y de bombeo según el
+            proceso de cada cliente.
+          </p>
+          <p class="mb-6 text-lg text-gray-200 md:text-xl">
+            Trabajamos desde Santo Domingo hacia proyectos en el país:
+            diagnóstico, equipos, instalación y mantenimiento correctivo o
+            preventivo para reducir paradas y proteger la calidad del agua de
+            proceso.
+          </p>
+          <a
+            href="/tratamiento-de-agua"
+            class="text-lg font-semibold text-brand-on-dark hover:underline"
+          >
+            Volver a tratamiento de agua
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="container mx-auto px-6 py-16 md:px-12" aria-labelledby="proceso-ri">
+      <h2
+        id="proceso-ri"
+        class="mb-8 text-3xl font-bold text-[rgb(11,65,88)] md:text-5xl"
+      >
+        Cómo trabajamos contigo
+      </h2>
+      <div class="grid gap-8 md:grid-cols-3">
+        <article>
+          <h3 class="mb-2 text-xl font-semibold text-[rgb(11,65,88)] md:text-2xl">
+            Diagnóstico
+          </h3>
+          <p class="text-lg text-gray-700">
+            Definimos si el proyecto es residencial o industrial y qué tipo de
+            tratamiento de agua necesitas.
+          </p>
+        </article>
+        <article>
+          <h3 class="mb-2 text-xl font-semibold text-[rgb(11,65,88)] md:text-2xl">
+            Instalación y equipos
+          </h3>
+          <p class="text-lg text-gray-700">
+            Instalamos el sistema y suministramos equipos y accesorios para
+            operación segura en RD.
+          </p>
+        </article>
+        <article>
+          <h3 class="mb-2 text-xl font-semibold text-[rgb(11,65,88)] md:text-2xl">
+            Mantenimiento
+          </h3>
+          <p class="text-lg text-gray-700">
+            Seguimiento preventivo y correctivo para hogares y plantas en Santo
+            Domingo y el país.
+          </p>
+        </article>
+      </div>
+      <Image
+        src={industrial3}
+        alt="Proyecto residencial e industrial de tratamiento de agua BlueDrop SRL"
+        width={1200}
+        height={600}
+        class="mt-12 h-auto w-full rounded-xl object-cover"
+      />
+    </section>
+
+    <section class="container mx-auto px-6 py-16 md:px-12" aria-labelledby="faq-ri">
+      <h2
+        id="faq-ri"
+        class="mb-8 text-3xl font-bold text-[rgb(11,65,88)] md:text-5xl"
+      >
+        Preguntas frecuentes
+      </h2>
+      <div class="mx-auto max-w-3xl space-y-4">
+        {
+          faqItems.map((item) => (
+            <details class="rounded-lg border border-gray-200 bg-white p-4">
+              <summary class="cursor-pointer text-lg font-semibold text-[rgb(11,65,88)] md:text-xl">
+                {item.question}
+              </summary>
+              <p class="mt-3 text-base text-gray-700 md:text-lg">{item.answer}</p>
+            </details>
+          ))
+        }
+      </div>
+    </section>
+
+    <section class="bg-blue-50 px-6 py-16 text-center md:px-12" aria-labelledby="cta-ri">
+      <h2 id="cta-ri" class="mb-4 text-3xl font-bold text-[rgb(11,65,88)] md:text-5xl">
+        Evalúa tu proyecto residencial o industrial
+      </h2>
+      <p class="mx-auto mb-8 max-w-3xl text-lg text-gray-700 md:text-xl">
+        Más que una compañía, somos tus aliados. Contacta a BlueDrop SRL para
+        tratamiento de agua residencial en Santo Domingo o industrial en
+        República Dominicana.
+      </p>
+      <div class="flex flex-wrap justify-center gap-4">
+        <a
+          href="tel:+18495847374"
+          class="rounded-lg bg-brand px-6 py-3 text-lg font-semibold text-white hover:bg-brand-hover"
+        >
+          +1 (849) 584-7374
+        </a>
+        <a
+          href="https://wa.me/18495847374"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="rounded-lg bg-[#231f20] px-6 py-3 text-lg font-semibold text-white hover:bg-black"
+        >
+          WhatsApp
+        </a>
+        <a
+          href="mailto:bluedropventas@gmail.com"
+          class="rounded-lg border-2 border-[#231f20] px-6 py-3 text-lg font-semibold text-[#231f20] hover:bg-white"
+        >
+          bluedropventas@gmail.com
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</Layout>

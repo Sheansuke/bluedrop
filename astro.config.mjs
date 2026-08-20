@@ -24,6 +24,11 @@ export default defineConfig({
 
                 if (url.endsWith('/tratamiento-de-agua')) {
                     item.priority = 1.0
+                } else if (
+                    url.endsWith('/tratamiento-de-agua-santo-domingo') ||
+                    url.endsWith('/tratamiento-de-agua-residencial-industrial')
+                ) {
+                    item.priority = 0.8
                 } else if (url === 'https://www.bluedroprd.com') {
                     item.priority = 0.9
                 }

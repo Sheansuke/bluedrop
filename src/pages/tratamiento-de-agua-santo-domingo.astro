@@ -1,0 +1,301 @@
+---
+import { Image } from "astro:assets"
+import industrial1 from "../assets/industrial1.jpg"
+import vasoagua from "../assets/vasoaguav3.png"
+import Footer from "../components/Footer/Footer.astro"
+import Navbar from "../components/Navbar/Navbar.astro"
+import Layout from "../layouts/Layout.astro"
+
+const title = "Tratamiento de agua en Santo Domingo | BlueDrop SRL"
+const description =
+  "Empresa de tratamiento de agua en Santo Domingo. BlueDrop SRL: instalación, equipos, purificación y mantenimiento en Los Prados, Distrito Nacional y RD."
+
+const faqItems = [
+  {
+    question: "¿Dónde está BlueDrop en Santo Domingo?",
+    answer:
+      "Estamos en Av. Charles Summer #19B Plaza Lesmar local 203, segundo nivel, Los Prados, Santo Domingo, Distrito Nacional. Atiendes por teléfono, WhatsApp o correo.",
+  },
+  {
+    question: "¿Atienden solo el Distrito Nacional?",
+    answer:
+      "Nuestra oficina está en Santo Domingo. Atendemos proyectos en el Distrito Nacional y zonas aledañas, y coordinamos trabajos en otras localidades de República Dominicana según el alcance del sistema.",
+  },
+  {
+    question: "¿Qué servicios de tratamiento de agua ofrecen en Santo Domingo?",
+    answer:
+      "Instalación de sistemas de tratamiento de agua, venta de equipos y accesorios, purificación, mantenimiento preventivo y correctivo, y suministros relacionados para hogares, comercios e industrias.",
+  },
+]
+
+const extraJsonLd = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      itemListElement: [
+        {
+          "@type": "ListItem",
+          position: 1,
+          name: "Inicio",
+          item: "https://www.bluedroprd.com/",
+        },
+        {
+          "@type": "ListItem",
+          position: 2,
+          name: "Tratamiento de agua",
+          item: "https://www.bluedroprd.com/tratamiento-de-agua/",
+        },
+        {
+          "@type": "ListItem",
+          position: 3,
+          name: "Santo Domingo",
+          item: "https://www.bluedroprd.com/tratamiento-de-agua-santo-domingo/",
+        },
+      ],
+    },
+    {
+      "@type": "Service",
+      name: "Tratamiento de agua en Santo Domingo",
+      serviceType: "Tratamiento de agua",
+      provider: {
+        "@type": "LocalBusiness",
+        name: "BlueDrop SRL",
+        telephone: "+1 (849) 584-7374",
+        email: "bluedropventas@gmail.com",
+        address: {
+          "@type": "PostalAddress",
+          streetAddress:
+            "Av. Charles Summer #19B Plaza Lesmar local 203 segundo nivel",
+          addressLocality: "Los Prados",
+          addressRegion: "Santo Domingo",
+          addressCountry: "DO",
+        },
+      },
+      areaServed: {
+        "@type": "City",
+        name: "Santo Domingo",
+      },
+      url: "https://www.bluedroprd.com/tratamiento-de-agua-santo-domingo/",
+      description,
+    },
+    {
+      "@type": "FAQPage",
+      mainEntity: faqItems.map((item) => ({
+        "@type": "Question",
+        name: item.question,
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: item.answer,
+        },
+      })),
+    },
+  ],
+}
+---
+
+<Layout title={title} description={description} extraJsonLd={extraJsonLd}>
+  <Navbar
+    breadcrumbs={[
+      { label: "Inicio", href: "/" },
+      { label: "Tratamiento de agua", href: "/tratamiento-de-agua" },
+      { label: "Santo Domingo" },
+    ]}
+  />
+
+  <main>
+    <section
+      class="bg-gradient-to-b from-blue-100 via-blue-50 to-white px-6 py-16 md:px-12 md:py-24"
+      aria-labelledby="sd-heading"
+    >
+      <div class="container mx-auto grid items-center gap-12 md:grid-cols-2">
+        <div>
+          <p class="mb-4 text-lg font-medium uppercase tracking-wide text-brand md:text-xl">
+            Empresa local · BlueDrop SRL
+          </p>
+          <h1
+            id="sd-heading"
+            class="mb-6 text-4xl font-black uppercase leading-tight text-[rgb(11,65,88)] md:text-5xl lg:text-6xl"
+          >
+            Tratamiento de agua en Santo Domingo
+          </h1>
+          <p class="mb-4 text-xl font-medium text-gray-800 md:text-2xl">
+            Más que una compañía, somos tus aliados en el Distrito Nacional
+          </p>
+          <p class="mb-8 text-lg text-gray-700 md:text-xl">
+            Si buscas una empresa de tratamiento de agua en Santo Domingo,
+            BlueDrop diseña, instala y mantiene sistemas de filtración y
+            purificación para hogares, comercios e industrias. Operamos desde
+            Los Prados y atendemos proyectos en toda la ciudad y República
+            Dominicana.
+          </p>
+          <div class="flex flex-wrap gap-4">
+            <a
+              href="tel:+18495847374"
+              class="rounded-lg bg-brand px-6 py-3 text-lg font-semibold text-white hover:bg-brand-hover"
+            >
+              Llamar +1 (849) 584-7374
+            </a>
+            <a
+              href="https://wa.me/18495847374"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="rounded-lg border-2 border-brand px-6 py-3 text-lg font-semibold text-brand hover:bg-blue-50"
+            >
+              WhatsApp
+            </a>
+          </div>
+        </div>
+        <div class="flex justify-center">
+          <Image
+            src={vasoagua}
+            alt="Tratamiento de agua en Santo Domingo - BlueDrop SRL"
+            width={420}
+            height={1080}
+            loading="eager"
+            fetchpriority="high"
+            class="max-w-full h-auto"
+          />
+        </div>
+      </div>
+    </section>
+
+    <section class="container mx-auto px-6 py-16 md:px-12" aria-labelledby="por-que-sd">
+      <h2
+        id="por-que-sd"
+        class="mb-4 text-3xl font-bold text-[rgb(11,65,88)] md:text-5xl"
+      >
+        Sistemas de tratamiento de agua en Santo Domingo
+      </h2>
+      <p class="mb-6 max-w-4xl text-lg text-gray-700 md:text-xl">
+        En Santo Domingo la calidad del agua varía según la zona y el uso. Un
+        sistema bien dimensionado protege tuberías, equipos y la salud de quien
+        consume o utiliza el agua en casa o en la empresa.
+      </p>
+      <p class="mb-6 max-w-4xl text-lg text-gray-700 md:text-xl">
+        BlueDrop ofrece instalación de tratamiento de agua, venta de equipos,
+        purificación y mantenimiento. No vendemos solo un equipo: acompañamos el
+        diagnóstico, la puesta en marcha y el seguimiento en República
+        Dominicana.
+      </p>
+      <ul class="mb-8 list-disc space-y-3 pl-6 text-lg text-gray-700 md:text-xl">
+        <li>Evaluación de necesidades en Santo Domingo y alrededores</li>
+        <li>Instalación profesional de sistemas de tratamiento de agua</li>
+        <li>Equipos, bombas y accesorios para reposición y ampliación</li>
+        <li>Mantenimiento de sistemas de agua en el Distrito Nacional</li>
+      </ul>
+      <p class="text-lg text-gray-700 md:text-xl">
+        Conoce el detalle completo de nuestros servicios en la página de
+        <a href="/tratamiento-de-agua" class="font-semibold text-brand hover:underline">
+          tratamiento de agua
+        </a>
+        o las opciones
+        <a
+          href="/tratamiento-de-agua-residencial-industrial"
+          class="font-semibold text-brand hover:underline"
+        >
+          residenciales e industriales
+        </a>.
+      </p>
+    </section>
+
+    <section class="bg-[#231f20] px-6 py-16 text-white md:px-12" aria-labelledby="nap-heading">
+      <div class="container mx-auto grid items-center gap-10 md:grid-cols-2">
+        <div>
+          <h2 id="nap-heading" class="mb-4 text-3xl font-bold md:text-5xl">
+            Oficina en Los Prados, Santo Domingo
+          </h2>
+          <p class="mb-4 text-lg text-gray-200 md:text-xl">
+            <strong class="text-white">BlueDrop SRL</strong>
+            <br />
+            Av. Charles Summer #19B Plaza Lesmar local 203, segundo nivel
+            <br />
+            Los Prados, Santo Domingo, Distrito Nacional
+            <br />
+            República Dominicana
+          </p>
+          <p class="mb-6 text-lg text-gray-200 md:text-xl">
+            Teléfono:
+            <a href="tel:+18495847374" class="text-brand-on-dark hover:underline">
+              +1 (849) 584-7374
+            </a>
+            <br />
+            Email:
+            <a
+              href="mailto:bluedropventas@gmail.com"
+              class="text-brand-on-dark hover:underline"
+            >
+              bluedropventas@gmail.com
+            </a>
+          </p>
+          <p class="text-lg text-gray-200 md:text-xl">
+            Somos aliados de un recurso tan transparente como lo es el agua.
+            Agenda tu evaluación de tratamiento de agua en Santo Domingo.
+          </p>
+        </div>
+        <Image
+          src={industrial1}
+          alt="Instalación de tratamiento de agua en Santo Domingo - BlueDrop SRL"
+          width={800}
+          height={500}
+          class="h-auto w-full rounded-xl object-cover"
+        />
+      </div>
+    </section>
+
+    <section class="container mx-auto px-6 py-16 md:px-12" aria-labelledby="faq-sd">
+      <h2
+        id="faq-sd"
+        class="mb-8 text-3xl font-bold text-[rgb(11,65,88)] md:text-5xl"
+      >
+        Preguntas frecuentes en Santo Domingo
+      </h2>
+      <div class="mx-auto max-w-3xl space-y-4">
+        {
+          faqItems.map((item) => (
+            <details class="rounded-lg border border-gray-200 bg-white p-4">
+              <summary class="cursor-pointer text-lg font-semibold text-[rgb(11,65,88)] md:text-xl">
+                {item.question}
+              </summary>
+              <p class="mt-3 text-base text-gray-700 md:text-lg">{item.answer}</p>
+            </details>
+          ))
+        }
+      </div>
+    </section>
+
+    <section class="bg-blue-50 px-6 py-16 text-center md:px-12" aria-labelledby="cta-sd">
+      <h2 id="cta-sd" class="mb-4 text-3xl font-bold text-[rgb(11,65,88)] md:text-5xl">
+        Solicita tu evaluación en Santo Domingo
+      </h2>
+      <p class="mx-auto mb-8 max-w-3xl text-lg text-gray-700 md:text-xl">
+        Habla con BlueDrop SRL para tratamiento de agua, equipos y mantenimiento
+        en Santo Domingo y República Dominicana.
+      </p>
+      <div class="flex flex-wrap justify-center gap-4">
+        <a
+          href="tel:+18495847374"
+          class="rounded-lg bg-brand px-6 py-3 text-lg font-semibold text-white hover:bg-brand-hover"
+        >
+          +1 (849) 584-7374
+        </a>
+        <a
+          href="https://wa.me/18495847374"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="rounded-lg bg-[#231f20] px-6 py-3 text-lg font-semibold text-white hover:bg-black"
+        >
+          WhatsApp
+        </a>
+        <a
+          href="mailto:bluedropventas@gmail.com"
+          class="rounded-lg border-2 border-[#231f20] px-6 py-3 text-lg font-semibold text-[#231f20] hover:bg-white"
+        >
+          bluedropventas@gmail.com
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</Layout>

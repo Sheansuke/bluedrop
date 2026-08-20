@@ -1,30 +1,36 @@
 ---
-import { Image } from "astro:assets";
-import logo from "../../assets/logo-navbar.webp";
+import { Image } from "astro:assets"
+import logo from "../../assets/logo-navbar.webp"
 
-// Navbar component with logo and Contacts option
+interface BreadcrumbItem {
+  label: string
+  href?: string
+}
+
+interface Props {
+  breadcrumbs?: BreadcrumbItem[]
+}
+
+const { breadcrumbs = [] } = Astro.props
 ---
 
 <nav class="bg-white shadow-lg border-b border-gray-200">
   <div class="w-full mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="flex justify-between items-center ">
-
-      <!-- Logo -->
+    <div class="flex justify-between items-center">
       <div class="flex-shrink-0 flex items-center">
         <a href="/" class="flex items-center space-x-2">
-          <Image 
+          <Image
             src={logo}
             width={200}
             height={52}
             densities={[1, 2]}
-            alt="BlueDrop SRL, tratamiento de agua en República Dominicana" 
+            alt="BlueDrop SRL, tratamiento de agua en República Dominicana"
             loading="eager"
             class="m-4 h-[52px] w-[200px]"
           />
         </a>
       </div>
 
-      <!-- Navigation Links -->
       <div class="hidden md:block">
         <div class="ml-10 flex items-baseline space-x-4">
           <a
@@ -32,6 +38,12 @@ import logo from "../../assets/logo-navbar.webp";
             class="text-gray-700 hover:text-blue-600 px-3 py-2 rounded-md text-xl lg:text-2xl font-medium transition-colors duration-200"
           >
             Tratamiento de agua
+          </a>
+          <a
+            href="/tratamiento-de-agua-santo-domingo"
+            class="text-gray-700 hover:text-blue-600 px-3 py-2 rounded-md text-xl lg:text-2xl font-medium transition-colors duration-200"
+          >
+            Santo Domingo
           </a>
           <a
             href="#contact"
@@ -42,25 +54,33 @@ import logo from "../../assets/logo-navbar.webp";
         </div>
       </div>
 
-      <!-- Mobile menu button -->
       <div class="md:hidden">
-        <button 
-          type="button" 
+        <button
+          type="button"
           class="mobile-menu-button bg-gray-100 inline-flex items-center justify-center p-2 rounded-md text-gray-700 hover:text-blue-600 hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-500"
-          aria-controls="mobile-menu" 
+          aria-controls="mobile-menu"
           aria-expanded="false"
         >
           <span class="sr-only">Abrir menú principal</span>
-          <!-- Hamburger icon -->
-          <svg class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+          <svg
+            class="block h-6 w-6"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            aria-hidden="true"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M4 6h16M4 12h16M4 18h16"></path>
           </svg>
         </button>
       </div>
     </div>
   </div>
 
-  <!-- Mobile menu -->
   <div class="mobile-menu hidden md:hidden" id="mobile-menu">
     <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white border-t border-gray-200">
       <a
@@ -70,6 +90,18 @@ import logo from "../../assets/logo-navbar.webp";
         Tratamiento de agua
       </a>
       <a
+        href="/tratamiento-de-agua-santo-domingo"
+        class="text-gray-700 hover:text-blue-600 block px-3 py-2 rounded-md text-base font-medium transition-colors duration-200"
+      >
+        Santo Domingo
+      </a>
+      <a
+        href="/tratamiento-de-agua-residencial-industrial"
+        class="text-gray-700 hover:text-blue-600 block px-3 py-2 rounded-md text-base font-medium transition-colors duration-200"
+      >
+        Residencial e industrial
+      </a>
+      <a
         href="#contact"
         class="text-gray-700 hover:text-blue-600 block px-3 py-2 rounded-md text-base font-medium transition-colors duration-200"
       >
@@ -77,22 +109,47 @@ import logo from "../../assets/logo-navbar.webp";
       </a>
     </div>
   </div>
+
+  {
+    breadcrumbs.length > 0 && (
+      <div class="border-t border-gray-100 bg-gray-50">
+        <div class="mx-auto w-full px-4 sm:px-6 lg:px-8">
+          <nav class="py-2" aria-label="Miga de pan">
+            <ol class="flex flex-wrap items-center gap-2 text-sm text-gray-600">
+              {breadcrumbs.map((item, index) => (
+                <li class="flex items-center gap-2">
+                  {index > 0 && <span aria-hidden="true">/</span>}
+                  {item.href ? (
+                    <a href={item.href} class="text-brand hover:underline">
+                      {item.label}
+                    </a>
+                  ) : (
+                    <span class="font-medium text-[rgb(11,65,88)]">{item.label}</span>
+                  )}
+                </li>
+              ))}
+            </ol>
+          </nav>
+        </div>
+      </div>
+    )
+  }
 </nav>
 
 <script>
-  document.addEventListener('DOMContentLoaded', function() {
-    const mobileMenuButton = document.querySelector('.mobile-menu-button');
-    const mobileMenu = document.querySelector('.mobile-menu');
-    
+  document.addEventListener("DOMContentLoaded", function () {
+    const mobileMenuButton = document.querySelector(".mobile-menu-button")
+    const mobileMenu = document.querySelector(".mobile-menu")
+
     if (mobileMenuButton && mobileMenu) {
-      mobileMenuButton.addEventListener('click', function() {
-        const isExpanded = mobileMenuButton.getAttribute('aria-expanded') === 'true';
-        
-        mobileMenuButton.setAttribute('aria-expanded', String(!isExpanded));
-        mobileMenu.classList.toggle('hidden');
-      });
+      mobileMenuButton.addEventListener("click", function () {
+        const isExpanded = mobileMenuButton.getAttribute("aria-expanded") === "true"
+
+        mobileMenuButton.setAttribute("aria-expanded", String(!isExpanded))
+        mobileMenu.classList.toggle("hidden")
+      })
     }
-  });
+  })
 </script>
 
 <style>
