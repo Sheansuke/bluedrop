@@ -8,10 +8,11 @@ BlueDrop specializes in pool and home improvement services, offering comprehensi
 
 ## 🚀 Tech Stack
 
-- **Framework**: [Astro](https://astro.build) v5.13.9
-- **Styling**: [Tailwind CSS](https://tailwindcss.com) v4.1.13 (with Vite plugin)
-- **Icons**: [@lucide/astro](https://lucide.dev) v0.544.0
+- **Framework**: [Astro](https://astro.build) v7.4
+- **Styling**: [Tailwind CSS](https://tailwindcss.com) v4 (with Vite plugin)
+- **Icons**: [@lucide/astro](https://lucide.dev)
 - **Language**: TypeScript
+- **Package manager**: [pnpm](https://pnpm.io)
 - **Utilities**: clsx for conditional class management
 
 ## 📁 Project Structure
@@ -56,14 +57,14 @@ The website showcases 6 core services:
 
 All commands are run from the root of the project, from a terminal:
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+| Command                    | Action                                           |
+| :------------------------- | :----------------------------------------------- |
+| `pnpm install`             | Installs dependencies                            |
+| `pnpm run dev`             | Starts local dev server at `localhost:4321`      |
+| `pnpm run build`           | Build your production site to `./dist/`          |
+| `pnpm run preview`         | Preview your build locally, before deploying     |
+| `pnpm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
+| `pnpm run astro -- --help` | Get help using the Astro CLI                     |
 
 ## 🎯 Key Features
 
@@ -95,12 +96,12 @@ All commands are run from the root of the project, from a terminal:
 
 2. **Install dependencies**
    ```sh
-   npm install
+   pnpm install
    ```
 
 3. **Start development server**
    ```sh
-   npm run dev
+   pnpm run dev
    ```
 
 4. **Open your browser**
@@ -109,14 +110,14 @@ All commands are run from the root of the project, from a terminal:
 ## 📦 Build for Production
 
 ```sh
-npm run build
+pnpm run build
 ```
 
 The built files will be in the `./dist/` directory, ready for deployment.
 
 ## 🔧 Configuration
 
-- **Astro Config**: [`astro.config.mjs`](astro.config.mjs) - Includes CSP experimental features and Tailwind Vite plugin
+- **Astro Config**: [`astro.config.mjs`](astro.config.mjs) - Includes CSP (`security.csp`) and Tailwind Vite plugin
 - **TypeScript**: [`tsconfig.json`](tsconfig.json) - Extends Astro's strict configuration
 - **Tailwind**: Configured via Vite plugin in Astro config
 

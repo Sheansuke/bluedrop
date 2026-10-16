@@ -1,9 +1,10 @@
 # Commands
-- Build: npm run build
-- Lint: npm run lint (add ESLint for Astro/TypeScript)
-- Typecheck: npm run typecheck (use Astro check)
-- Test all: npm run test (set up Vitest for components)
-- Single test: npm run test -- <test-file> (e.g., npm run test src/components/MenuItem.test.ts)
+- Build: pnpm run build
+- Lint: pnpm run lint (add ESLint for Astro/TypeScript)
+- Typecheck: pnpm run typecheck (use Astro check)
+- Test all: pnpm run test (set up Vitest for components)
+- Single test: pnpm run test -- <test-file> (e.g., pnpm run test src/components/MenuItem.test.ts)
+- Package manager: pnpm (do not use npm or yarn)
 
 # Code Style Guidelines
 - Imports: Relative paths only; group by Astro built-ins, libs, components/assets.
