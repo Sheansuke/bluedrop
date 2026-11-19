@@ -1,0 +1,82 @@
+---
+import { Image } from "astro:assets"
+
+import mantenimiento1 from "../../assets/v2/page-6-images/page-6-image-1.png"
+import mantenimiento2 from "../../assets/v2/page-6-images/page-6-image-2.png"
+
+interface MantenimientoItem {
+  title: string
+  subtitle: string
+  description: string
+  image: ImageMetadata
+  alt: string
+}
+
+const services: MantenimientoItem[] = [
+  {
+    title: "Mantenimiento y Calibración de Válvulas",
+    subtitle: "Servicio preventivo y correctivo",
+    description: "Inspección técnica, calibración de cabezales automáticos, revisión de manómetros de presión y retrolavado periódico de tanques filtrantes.",
+    image: mantenimiento1,
+    alt: "Mantenimiento y calibración técnica de tanques y válvulas de filtración - BlueDrop SRL"
+  },
+  {
+    title: "Sustitución de Filtros y Consumibles",
+    subtitle: "Remplazo programado de etapas",
+    description: "Cambio de filtros en línea de carbón activado Hydronix, membranas de ósmosis inversa, cartuchos de sedimentos y lámparas UV.",
+    image: mantenimiento2,
+    alt: "Cambio de filtro en línea Hydronix ICF-10Q para ósmosis inversa - BlueDrop SRL"
+  }
+]
+---
+
+<section
+  id="pagina6"
+  class="w-full relative shadow-[0_20px_50px_rgba(0,140,199,0.2)] scroll-mt-20"
+  aria-labelledby="mantenimiento-heading"
+>
+  <div class="bg-[#231f20] flex flex-col justify-center items-center px-6 py-10">
+    <h2
+      id="mantenimiento-heading"
+      class="text-3xl md:text-5xl font-bold text-white text-center tracking-wider uppercase"
+    >
+      Mantenimiento en General
+    </h2>
+    <p class="mt-3 max-w-3xl text-center text-base md:text-xl text-gray-200">
+      Mantenimiento preventivo y correctivo para sistemas de tratamiento de agua, piscinas, bombas y equipos de purificación residencial e industrial.
+    </p>
+  </div>
+
+  <div class="container mx-auto px-6 py-12 md:py-16">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10 items-stretch">
+      {services.map((service) => (
+        <article class="bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-md hover:shadow-xl transition-all duration-300 flex flex-col">
+          <div class="relative w-full h-72 md:h-96 overflow-hidden bg-gray-100">
+            <Image
+              src={service.image}
+              alt={service.alt}
+              width={900}
+              height={600}
+              class="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
+              loading="lazy"
+            />
+          </div>
+
+          <div class="p-6 md:p-8 flex flex-col flex-1 justify-between">
+            <div>
+              <span class="inline-block text-xs uppercase tracking-wider text-brand font-semibold px-3 py-1 bg-sky-50 rounded-full mb-3">
+                {service.subtitle}
+              </span>
+              <h3 class="text-xl md:text-2xl font-bold text-[rgb(11,65,88)] mb-3">
+                {service.title}
+              </h3>
+              <p class="text-sm md:text-base text-gray-600">
+                {service.description}
+              </p>
+            </div>
+          </div>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>

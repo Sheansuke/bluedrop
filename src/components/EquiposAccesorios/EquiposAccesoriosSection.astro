@@ -1,0 +1,222 @@
+---
+import { Image } from "astro:assets"
+
+import img1 from "../../assets/v2/page-4-images/sin-fondo/page-4-sinfondo-image-1.png"
+import img2 from "../../assets/v2/page-4-images/sin-fondo/page-4-sinfondo-image-2.png"
+import img3 from "../../assets/v2/page-4-images/sin-fondo/page-4-sinfondo-image-3.png"
+import img4 from "../../assets/v2/page-4-images/sin-fondo/page-4-sinfondo-image-4.png"
+import img5 from "../../assets/v2/page-4-images/sin-fondo/page-4-sinfondo-image-5.png"
+import img6 from "../../assets/v2/page-4-images/sin-fondo/page-4-sinfondo-image-6.png"
+import img7 from "../../assets/v2/page-4-images/sin-fondo/page-4-sinfondo-image-7.png"
+import img8 from "../../assets/v2/page-4-images/sin-fondo/page-4-sinfondo-image-8.png"
+import img9 from "../../assets/v2/page-4-images/sin-fondo/page-4-sinfondo-image-9.png"
+import img10 from "../../assets/v2/page-4-images/sin-fondo/page-4-sinfondo-image-10.png"
+import img11 from "../../assets/v2/page-4-images/sin-fondo/page-4-sinfondo-image-11.png"
+import img12 from "../../assets/v2/page-4-images/sin-fondo/page-4-sinfondo-image-12.png"
+import img13 from "../../assets/v2/page-4-images/sin-fondo/page-4-sinfondo-image-13.png"
+import img14 from "../../assets/v2/page-4-images/sin-fondo/page-4-sinfondo-image-14.png"
+import img15 from "../../assets/v2/page-4-images/sin-fondo/page-4-sinfondo-image-15.png"
+import img16 from "../../assets/v2/page-4-images/sin-fondo/page-4-sinfondo-image-16.png"
+import img17 from "../../assets/v2/page-4-images/sin-fondo/page-4-sinfondo-image-17.png"
+import img18 from "../../assets/v2/page-4-images/sin-fondo/page-4-sinfondo-image-18.png"
+import img19 from "../../assets/v2/page-4-images/sin-fondo/page-4-sinfondo-image-19.png"
+import img20 from "../../assets/v2/page-4-images/sin-fondo/page-4-sinfondo-image-20.png"
+
+interface AccessoryItem {
+  id: number
+  title: string
+  category: string
+  image: ImageMetadata
+  alt: string
+}
+
+// Ordered to reflect the visual rows and groups seen on the original page
+const items: AccessoryItem[] = [
+  {
+    id: 3,
+    title: "Portafiltros Big Blue",
+    category: "Carcasas de Filtración",
+    image: img3,
+    alt: "Portafiltros Big Blue para purificación de agua - BlueDrop SRL"
+  },
+  {
+    id: 9,
+    title: "Balastro Electrónico UV",
+    category: "Componentes Eléctricos",
+    image: img9,
+    alt: "Balastro electrónico y fuente de poder para lámpara UV - BlueDrop SRL"
+  },
+  {
+    id: 7,
+    title: "Lámpara Ultravioleta Germicida",
+    category: "Desinfección UV",
+    image: img7,
+    alt: "Lámpara germicida ultravioleta para desinfección de agua - BlueDrop SRL"
+  },
+  {
+    id: 8,
+    title: "Pistón de Control y Flujo",
+    category: "Repuestos y Válvulas",
+    image: img8,
+    alt: "Pistón actuador de control de flujo para válvulas de agua - BlueDrop SRL"
+  },
+  {
+    id: 10,
+    title: "Esterilizadores UV en Acero Inoxidable",
+    category: "Desinfección UV",
+    image: img10,
+    alt: "Cámaras esterilizadoras UV industriales de acero inoxidable - BlueDrop SRL"
+  },
+  {
+    id: 15,
+    title: "Válvula Digital para Suavizador",
+    category: "Válvulas Automáticas",
+    image: img15,
+    alt: "Válvula de control digital para sistemas suavizadores - BlueDrop SRL"
+  },
+  {
+    id: 14,
+    title: "Cabezal Digital de Filtración",
+    category: "Válvulas Automáticas",
+    image: img14,
+    alt: "Cabezal automático digital para control de retrolavado - BlueDrop SRL"
+  },
+  {
+    id: 4,
+    title: "Cartuchos de Polipropileno",
+    category: "Cartuchos Filtrantes",
+    image: img4,
+    alt: "Cartuchos de sedimentos de polipropileno para retención de sólidos - BlueDrop SRL"
+  },
+  {
+    id: 6,
+    title: "Membranas de Ósmosis Inversa",
+    category: "Membranas RO",
+    image: img6,
+    alt: "Membranas para desalinización y ósmosis inversa - BlueDrop SRL"
+  },
+  {
+    id: 1,
+    title: "Bomba Centrífuga de Acero Inox",
+    category: "Equipos de Bombeo",
+    image: img1,
+    alt: "Bomba centrífuga horizontal en acero inoxidable - BlueDrop SRL"
+  },
+  {
+    id: 2,
+    title: "Cartuchos de Carbón en Bloque",
+    category: "Cartuchos Filtrantes",
+    image: img2,
+    alt: "Cartuchos de carbón activado en bloque CTO - BlueDrop SRL"
+  },
+  {
+    id: 11,
+    title: "Bombas Verticales Multietapa",
+    category: "Equipos de Bombeo",
+    image: img11,
+    alt: "Bombas multietapas verticales de alta presión - BlueDrop SRL"
+  },
+  {
+    id: 13,
+    title: "Bomba Dosificadora de Químicos",
+    category: "Dosificación Química",
+    image: img13,
+    alt: "Bomba dosificadora de diafragma electromagnética - BlueDrop SRL"
+  },
+  {
+    id: 5,
+    title: "Cartuchos Plisados Lavables",
+    category: "Cartuchos Filtrantes",
+    image: img5,
+    alt: "Cartuchos de filtro plisados reutilizables - BlueDrop SRL"
+  },
+  {
+    id: 19,
+    title: "Válvula Digital con Pantalla LCD",
+    category: "Válvulas Automáticas",
+    image: img19,
+    alt: "Válvula automática para descalcificador con display LCD - BlueDrop SRL"
+  },
+  {
+    id: 20,
+    title: "Cabezal Automático Programable",
+    category: "Válvulas Automáticas",
+    image: img20,
+    alt: "Válvula de control automático con teclado programable - BlueDrop SRL"
+  },
+  {
+    id: 17,
+    title: "Válvula Mecánica con Dial",
+    category: "Válvulas Manuales",
+    image: img17,
+    alt: "Válvula multivía mecánica de reloj para control de filtros - BlueDrop SRL"
+  },
+  {
+    id: 18,
+    title: "Actuador Electromecánico",
+    category: "Controladores",
+    image: img18,
+    alt: "Caja de temporizador y actuador electromecánico con engranajes - BlueDrop SRL"
+  },
+  {
+    id: 16,
+    title: "Válvula Motorizada de Bronce",
+    category: "Válvulas Industriales",
+    image: img16,
+    alt: "Válvula motorizada para control de fluidos con cuerpo de bronce - BlueDrop SRL"
+  },
+  {
+    id: 12,
+    title: "Bomba Periférica para Agua",
+    category: "Equipos de Bombeo",
+    image: img12,
+    alt: "Bomba periférica para presurización y suministro de agua - BlueDrop SRL"
+  }
+]
+---
+
+<section
+  id="pagina4"
+  class="w-full relative shadow-[0_20px_50px_rgba(0,140,199,0.2)] scroll-mt-20"
+  aria-labelledby="equipos-heading"
+>
+  <div class="bg-[#231f20] flex flex-col justify-center items-center px-6 py-10">
+    <h2
+      id="equipos-heading"
+      class="text-3xl md:text-5xl font-bold text-white text-center tracking-wider uppercase"
+    >
+      Venta de Accesorios / Equipo
+    </h2>
+    <p class="mt-3 max-w-3xl text-center text-base md:text-xl text-gray-200">
+      Venta de equipos, bombas, válvulas automáticas y repuestos para tratamiento de agua, purificación y sistemas de piscinas.
+    </p>
+  </div>
+
+  <div class="container mx-auto px-6 py-12 md:py-16">
+    <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 md:gap-6">
+      {items.map((item) => (
+        <article class="bg-white rounded-xl p-4 flex flex-col items-center justify-between border border-gray-100 shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1 group">
+          <div class="w-full h-40 flex items-center justify-center p-2 mb-3 bg-gray-50/50 rounded-lg group-hover:bg-sky-50/40 transition-colors">
+            <Image
+              src={item.image}
+              alt={item.alt}
+              width={260}
+              height={260}
+              class="max-h-36 max-w-full w-auto h-auto object-contain transition-transform duration-300 group-hover:scale-105"
+              loading="lazy"
+            />
+          </div>
+
+          <div class="w-full text-center mt-auto">
+            <span class="block text-[11px] font-semibold uppercase tracking-wider text-brand mb-1">
+              {item.category}
+            </span>
+            <h3 class="text-sm md:text-base font-semibold text-gray-800 line-clamp-2">
+              {item.title}
+            </h3>
+          </div>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>

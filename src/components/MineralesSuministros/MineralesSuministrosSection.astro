@@ -1,0 +1,251 @@
+---
+import { Image } from "astro:assets"
+
+import img1 from "../../assets/v2/page-9-images/sin-fondo/page-9-sinfondo-image-1.png"
+import img2 from "../../assets/v2/page-9-images/sin-fondo/page-9-sinfondo-image-2.png"
+import img3 from "../../assets/v2/page-9-images/sin-fondo/page-9-sinfondo-image-3.png"
+import img4 from "../../assets/v2/page-9-images/sin-fondo/page-9-sinfondo-image-4.png"
+import img5 from "../../assets/v2/page-9-images/sin-fondo/page-9-sinfondo-image-5.png"
+import img6 from "../../assets/v2/page-9-images/sin-fondo/page-9-sinfondo-image-6.png"
+import img7 from "../../assets/v2/page-9-images/sin-fondo/page-9-sinfondo-image-7.png"
+import img8 from "../../assets/v2/page-9-images/sin-fondo/page-9-sinfondo-image-8.png"
+import img9 from "../../assets/v2/page-9-images/sin-fondo/page-9-sinfondo-image-9.png"
+import img10 from "../../assets/v2/page-9-images/sin-fondo/page-9-sinfondo-image-10.png"
+import img11 from "../../assets/v2/page-9-images/sin-fondo/page-9-sinfondo-image-11.png"
+import img12 from "../../assets/v2/page-9-images/sin-fondo/page-9-sinfondo-image-12.png"
+import img14 from "../../assets/v2/page-9-images/sin-fondo/page-9-sinfondo-image-14.png"
+import img15 from "../../assets/v2/page-9-images/sin-fondo/page-9-sinfondo-image-15.png"
+import img16 from "../../assets/v2/page-9-images/sin-fondo/page-9-sinfondo-image-16.png"
+import img17 from "../../assets/v2/page-9-images/sin-fondo/page-9-sinfondo-image-17.png"
+
+interface MineralSupply {
+  title: string
+  category: string
+  description: string
+  mainImage: ImageMetadata
+  mainAlt: string
+  sampleImage?: ImageMetadata
+  sampleAlt?: string
+}
+
+const filtrationMedia: MineralSupply[] = [
+  {
+    title: "Arena y Grava Sílica",
+    category: "Filtración Física",
+    description: "Lecho filtrante graduado para retención eficiente de turbidez, sólidos suspendidos y sedimentos en aguas potables e industriales.",
+    mainImage: img10,
+    mainAlt: "Saco de arena y grava sílica para filtración de agua - BlueDrop SRL",
+    sampleImage: img9,
+    sampleAlt: "Muestra de grava sílica graduada para filtros de agua"
+  },
+  {
+    title: "Carbón Activado Granular",
+    category: "Decloración y Purificación",
+    description: "Carbón activado de alta adsorción (Calgon Carbon) para eliminación de cloro, olor, color, pesticidas y compuestos orgánicos.",
+    mainImage: img2,
+    mainAlt: "Saco de carbón activado granular Calgon Carbon - BlueDrop SRL",
+    sampleImage: img3,
+    sampleAlt: "Gránulos de carbón activado para purificación de agua"
+  },
+  {
+    title: "Resina Catióica de Intercambio Iónico",
+    category: "Suavización de Agua",
+    description: "Resina Dow Amberlite de alta capacidad para eliminación de dureza cálcica y magnésica en ablandadores residenciales e industriales.",
+    mainImage: img4,
+    mainAlt: "Saco de resina catiónica de intercambio iónico Dow Amberlite - BlueDrop SRL",
+    sampleImage: img5,
+    sampleAlt: "Microesferas de resina de intercambio iónico para descalcificación"
+  },
+  {
+    title: "Filter-Ag® Clack",
+    category: "Filtración Ligera",
+    description: "Medio granular silíceo no anhídrido de baja densidad, diseñado para retención de partículas con menos requerimiento de flujo de retrolavado.",
+    mainImage: img6,
+    mainAlt: "Saco de medio filtrante Filter-Ag Clack - BlueDrop SRL",
+    sampleImage: img7,
+    sampleAlt: "Muestra granular de medio Filter-Ag Clack"
+  },
+  {
+    title: "Turbidex™ Hiperfiltración",
+    category: "Hiperfiltración 3-5 Micras",
+    description: "Mineral aluminosilicato de alta porosidad que filtra partículas suspendidas hasta 3-5 micras, superando a los filtros de arena tradicionales.",
+    mainImage: img8,
+    mainAlt: "Saco y mineral granular Turbidex para hiperfiltración de agua - BlueDrop SRL"
+  }
+]
+
+const chemicalsAndSalts: MineralSupply[] = [
+  {
+    title: "Pastillas Purificadoras de Cloro",
+    category: "Desinfección",
+    description: "Pastillas compactas de disolución uniforme para saneamiento y control microbiológico continuo en piscinas y depósitos.",
+    mainImage: img1,
+    mainAlt: "Pastillas y tabletas de cloro purificador de agua - BlueDrop SRL"
+  },
+  {
+    title: "Sal en Pellets de Alta Pureza",
+    category: "Regeneración de Suavizadores",
+    description: "Fine Pellets al 99.8% de cloruro de sodio puro para regeneración limpia de suavizadores, evitando apelmazamiento en el tanque de salmuera.",
+    mainImage: img11,
+    mainAlt: "Saco de sal compactada Fine Pellets para suavizadores - BlueDrop SRL",
+    sampleImage: img12,
+    sampleAlt: "Pellets blancos de sal pura compactada para tratamiento de agua"
+  },
+  {
+    title: "Sal Marina en Roca Aquaven",
+    category: "Piscinas y Ablandadores",
+    description: "Sal premium en grano 99.6% pura (50 lb / 22.6 kg) recomendada para cloradores salinos de piscinas y sistemas ablandadores.",
+    mainImage: img14,
+    mainAlt: "Saco de sal premium en roca Aquaven 50 lb - BlueDrop SRL",
+    sampleImage: img15,
+    sampleAlt: "Cristales de sal marina en roca natural"
+  },
+  {
+    title: "Ameroyal™ 710 Anti-Escalante",
+    category: "Protección de Membranas",
+    description: "Antiescalante BlueDrop de alto rendimiento (20 L / 5 galones) para prevenir depósitos de sílice y carbonatos en sistemas de ósmosis inversa.",
+    mainImage: img16,
+    mainAlt: "Envase de 5 galones de anti-escalante Ameroyal 710 BlueDrop - BlueDrop SRL"
+  },
+  {
+    title: "Químicos Industriales en Tambor",
+    category: "Suministro a Granel",
+    description: "Tambores de 55 galones de hipoclorito de sodio al 10% y soluciones concentradas de antiescalante para dosificación continua.",
+    mainImage: img17,
+    mainAlt: "Tambores industriales de cloro líquido y anti-escalante BlueDrop - BlueDrop SRL"
+  }
+]
+---
+
+<section
+  id="pagina9"
+  class="w-full relative shadow-[0_20px_50px_rgba(0,140,199,0.2)] scroll-mt-20"
+  aria-labelledby="minerales-heading"
+>
+  <!-- Anchor backup for logo9 link -->
+  <span id="logo9" class="sr-only">Minerales y suministros</span>
+
+  <div class="bg-[#231f20] flex flex-col justify-center items-center px-6 py-10">
+    <h2
+      id="minerales-heading"
+      class="text-3xl md:text-5xl font-bold text-white text-center tracking-wider uppercase"
+    >
+      Minerales y Suministros
+    </h2>
+    <p class="mt-3 max-w-3xl text-center text-base md:text-xl text-gray-200">
+      Medios filtrantes, resinas de intercambio, sales regenerantes y productos químicos especializados con el respaldo de BlueDrop SRL.
+    </p>
+  </div>
+
+  <div class="container mx-auto px-6 py-12 md:py-16 space-y-16">
+    <!-- FILTRATION MEDIA -->
+    <div>
+      <div class="border-b border-gray-200 pb-3 mb-8">
+        <h3 class="text-xl md:text-2xl font-bold text-[rgb(11,65,88)]">
+          Medios Filtrantes y Resinas
+        </h3>
+        <p class="text-sm md:text-base text-gray-600">
+          Elementos filtrantes granulares y resinas especializadas para lechos de purificación.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
+        {filtrationMedia.map((item) => (
+          <article class="bg-white rounded-xl p-5 flex flex-col justify-between border border-gray-100 shadow-sm hover:shadow-lg transition-all duration-300 group">
+            <div class="w-full h-48 flex items-center justify-center relative p-2 mb-4 bg-gray-50/50 rounded-lg group-hover:bg-sky-50/40 transition-colors">
+              <Image
+                src={item.mainImage}
+                alt={item.mainAlt}
+                width={280}
+                height={280}
+                class="max-h-44 max-w-full w-auto h-auto object-contain transition-transform duration-300 group-hover:scale-105"
+                loading="lazy"
+              />
+              {item.sampleImage && (
+                <div class="absolute bottom-2 right-2 w-16 h-16 bg-white/95 rounded-full p-1 shadow-md border border-gray-100 flex items-center justify-center overflow-hidden">
+                  <Image
+                    src={item.sampleImage}
+                    alt={item.sampleAlt || item.mainAlt}
+                    width={80}
+                    height={80}
+                    class="max-h-full max-w-full object-contain"
+                    loading="lazy"
+                  />
+                </div>
+              )}
+            </div>
+
+            <div class="flex-1 flex flex-col justify-between">
+              <div>
+                <span class="inline-block text-[11px] font-semibold uppercase tracking-wider text-brand mb-1">
+                  {item.category}
+                </span>
+                <h4 class="text-base font-bold text-gray-800 mb-2">
+                  {item.title}
+                </h4>
+              </div>
+              <p class="text-xs text-gray-600 line-clamp-3">
+                {item.description}
+              </p>
+            </div>
+          </article>
+        ))}
+      </div>
+    </div>
+
+    <!-- CHEMICALS AND SALTS -->
+    <div>
+      <div class="border-b border-gray-200 pb-3 mb-8">
+        <h3 class="text-xl md:text-2xl font-bold text-[rgb(11,65,88)]">
+          Sales, Químicos y Tratamiento
+        </h3>
+        <p class="text-sm md:text-base text-gray-600">
+          Sales de alta pureza, anti-incrustantes y biocidas para protección de sistemas hidráulicos.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
+        {chemicalsAndSalts.map((item) => (
+          <article class="bg-white rounded-xl p-5 flex flex-col justify-between border border-gray-100 shadow-sm hover:shadow-lg transition-all duration-300 group">
+            <div class="w-full h-48 flex items-center justify-center relative p-2 mb-4 bg-gray-50/50 rounded-lg group-hover:bg-sky-50/40 transition-colors">
+              <Image
+                src={item.mainImage}
+                alt={item.mainAlt}
+                width={280}
+                height={280}
+                class="max-h-44 max-w-full w-auto h-auto object-contain transition-transform duration-300 group-hover:scale-105"
+                loading="lazy"
+              />
+              {item.sampleImage && (
+                <div class="absolute bottom-2 right-2 w-16 h-16 bg-white/95 rounded-full p-1 shadow-md border border-gray-100 flex items-center justify-center overflow-hidden">
+                  <Image
+                    src={item.sampleImage}
+                    alt={item.sampleAlt || item.mainAlt}
+                    width={80}
+                    height={80}
+                    class="max-h-full max-w-full object-contain"
+                    loading="lazy"
+                  />
+                </div>
+              )}
+            </div>
+
+            <div class="flex-1 flex flex-col justify-between">
+              <div>
+                <span class="inline-block text-[11px] font-semibold uppercase tracking-wider text-brand mb-1">
+                  {item.category}
+                </span>
+                <h4 class="text-base font-bold text-gray-800 mb-2">
+                  {item.title}
+                </h4>
+              </div>
+              <p class="text-xs text-gray-600 line-clamp-3">
+                {item.description}
+              </p>
+            </div>
+          </article>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,82 @@
+---
+import { Image } from "astro:assets"
+
+import remodelacion1 from "../../assets/v2/page-5-images/page-5-image-2.png"
+import remodelacion2 from "../../assets/v2/page-5-images/page-5-image-1.png"
+
+interface RemodelacionItem {
+  title: string
+  subtitle: string
+  description: string
+  image: ImageMetadata
+  alt: string
+}
+
+const projects: RemodelacionItem[] = [
+  {
+    title: "Batería de Tanques de Filtración",
+    subtitle: "Modernización y adecuación técnica",
+    description: "Instalación y remodelación de baterías de tanques multicama y suavizadores industriales con colectores superiores e inferiores de alta eficiencia.",
+    image: remodelacion1,
+    alt: "Batería de tanques de filtración de agua industriales remodelados - BlueDrop SRL"
+  },
+  {
+    title: "Cuarto de Bombeo y Presurización",
+    subtitle: "Optimización de espacio hidráulico",
+    description: "Reorganización de cuarto de bombas con tanques presurizados, bombas centrífugas de recirculación y tuberías hidráulicas de alta resistencia.",
+    image: remodelacion2,
+    alt: "Cuarto de bombas presurizado y tanques de almacenamiento remodelados - BlueDrop SRL"
+  }
+]
+---
+
+<section
+  id="pagina5"
+  class="w-full relative shadow-[0_20px_50px_rgba(0,140,199,0.2)] scroll-mt-20"
+  aria-labelledby="remodelacion-heading"
+>
+  <div class="bg-[#231f20] flex flex-col justify-center items-center px-6 py-10">
+    <h2
+      id="remodelacion-heading"
+      class="text-3xl md:text-5xl font-bold text-white text-center tracking-wider uppercase"
+    >
+      Remodelado de Espacios
+    </h2>
+    <p class="mt-3 max-w-3xl text-center text-base md:text-xl text-gray-200">
+      Remodelación y adecuación de espacios técnicos relacionados con agua, cuartos de bombas, piscinas y sistemas integrales de purificación.
+    </p>
+  </div>
+
+  <div class="container mx-auto px-6 py-12 md:py-16">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10 items-stretch">
+      {projects.map((project) => (
+        <article class="bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-md hover:shadow-xl transition-all duration-300 flex flex-col">
+          <div class="relative w-full h-72 md:h-96 overflow-hidden bg-gray-100">
+            <Image
+              src={project.image}
+              alt={project.alt}
+              width={900}
+              height={600}
+              class="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
+              loading="lazy"
+            />
+          </div>
+
+          <div class="p-6 md:p-8 flex flex-col flex-1 justify-between">
+            <div>
+              <span class="inline-block text-xs uppercase tracking-wider text-brand font-semibold px-3 py-1 bg-sky-50 rounded-full mb-3">
+                {project.subtitle}
+              </span>
+              <h3 class="text-xl md:text-2xl font-bold text-[rgb(11,65,88)] mb-3">
+                {project.title}
+              </h3>
+              <p class="text-sm md:text-base text-gray-600">
+                {project.description}
+              </p>
+            </div>
+          </div>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>

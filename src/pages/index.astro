@@ -1,21 +1,21 @@
 ---
-import { Image } from "astro:assets";
-import pagina3 from "../assets/pagina3.jpg";
-import pagina4 from "../assets/pagina4.jpg";
-import pagina5 from "../assets/pagina5.jpg";
-import pagina6 from "../assets/pagina6.jpg";
-import pagina7 from "../assets/pagina7.jpg";
-import pagina8 from "../assets/pagina8.jpg";
-import pagina9 from "../assets/pagina9.webp";
-import pagina10 from "../assets/pagina10.webp";
-import vasoagua from "../assets/vasoaguav3.png";
-import Footer from "../components/Footer/Footer.astro";
-import Hero from "../components/Hero/Hero.astro";
-import Menu from "../components/Menu/Menu.astro";
-import MobileVideoHd from "../components/MobileVideo/MobileVideoHd.astro";
-import Navbar from "../components/Navbar/Navbar.astro";
-import Layout from "../layouts/Layout.astro";
-import ResidencialIndustiaSection from "../components/Residencial-Industria/ResidencialIndustiaSection.astro";
+import { Image } from "astro:assets"
+import pagina7 from "../assets/pagina7.jpg"
+import pagina8 from "../assets/pagina8.jpg"
+import pagina10 from "../assets/pagina10.webp"
+import vasoagua from "../assets/vasoaguav3.png"
+import EquiposAccesoriosSection from "../components/EquiposAccesorios/EquiposAccesoriosSection.astro"
+import Footer from "../components/Footer/Footer.astro"
+import Hero from "../components/Hero/Hero.astro"
+import InstalacionSection from "../components/Instalacion/InstalacionSection.astro"
+import MantenimientoSection from "../components/Mantenimiento/MantenimientoSection.astro"
+import Menu from "../components/Menu/Menu.astro"
+import MineralesSuministrosSection from "../components/MineralesSuministros/MineralesSuministrosSection.astro"
+import MobileVideoHd from "../components/MobileVideo/MobileVideoHd.astro"
+import Navbar from "../components/Navbar/Navbar.astro"
+import RemodelacionSection from "../components/Remodelacion/RemodelacionSection.astro"
+import ResidencialIndustiaSection from "../components/Residencial-Industria/ResidencialIndustiaSection.astro"
+import Layout from "../layouts/Layout.astro"
 ---
 
 <Layout
@@ -84,85 +84,13 @@ import ResidencialIndustiaSection from "../components/Residencial-Industria/Resi
 
     <MobileVideoHd />
 
-    <section aria-labelledby="instalacion-heading">
-      <div class="container mx-auto px-6 py-8 md:px-12">
-        <h2 id="instalacion-heading" class="text-2xl md:text-4xl font-bold text-[rgb(11,65,88)]">
-          Instalación de sistemas de tratamiento de agua
-        </h2>
-        <p class="mt-2 text-lg text-gray-700">
-          Instalación profesional de sistemas de tratamiento de agua y piscinas
-          para hogares, comercios e industrias en República Dominicana.
-        </p>
-      </div>
-      <Image
-        id="pagina3"
-        src={pagina3}
-        alt="Instalación profesional de sistemas de tratamiento de agua y piscinas - BlueDrop SRL"
-        width={1920}
-        height={1080}
-        class="w-screen object-fill"
-      />
-    </section>
+    <InstalacionSection />
 
-    <section aria-labelledby="equipos-heading">
-      <div class="container mx-auto px-6 py-8 md:px-12">
-        <h2 id="equipos-heading" class="text-2xl md:text-4xl font-bold text-[rgb(11,65,88)]">
-          Equipos y accesorios para tratamiento de agua
-        </h2>
-        <p class="mt-2 text-lg text-gray-700">
-          Venta de equipos, bombas y accesorios para tratamiento de agua,
-          purificación y sistemas de piscinas.
-        </p>
-      </div>
-      <Image
-        id="pagina4"
-        src={pagina4}
-        alt="Venta de equipos y accesorios para tratamiento de agua y piscinas - BlueDrop SRL"
-        width={1920}
-        height={1080}
-        class="w-screen object-fill"
-      />
-    </section>
+    <EquiposAccesoriosSection />
 
-    <section aria-labelledby="remodelacion-heading">
-      <div class="container mx-auto px-6 py-8 md:px-12">
-        <h2 id="remodelacion-heading" class="text-2xl md:text-4xl font-bold text-[rgb(11,65,88)]">
-          Remodelación de espacios
-        </h2>
-        <p class="mt-2 text-lg text-gray-700">
-          Remodelación de espacios relacionados con agua, piscinas y sistemas de
-          tratamiento de agua.
-        </p>
-      </div>
-      <Image
-        id="pagina5"
-        src={pagina5}
-        alt="Remodelación de espacios relacionados con tratamiento de agua y piscinas - BlueDrop SRL"
-        width={1920}
-        height={1080}
-        class="w-screen object-fill"
-      />
-    </section>
+    <RemodelacionSection />
 
-    <section aria-labelledby="mantenimiento-heading">
-      <div class="container mx-auto px-6 py-8 md:px-12">
-        <h2 id="mantenimiento-heading" class="text-2xl md:text-4xl font-bold text-[rgb(11,65,88)]">
-          Mantenimiento de tratamiento de agua
-        </h2>
-        <p class="mt-2 text-lg text-gray-700">
-          Mantenimiento preventivo y correctivo para sistemas de tratamiento de
-          agua, piscinas y equipos de bombeo.
-        </p>
-      </div>
-      <Image
-        id="pagina6"
-        src={pagina6}
-        alt="Mantenimiento de sistemas de tratamiento de agua y piscinas - BlueDrop SRL"
-        width={1920}
-        height={1080}
-        class="w-screen object-fill"
-      />
-    </section>
+    <MantenimientoSection />
 
     <section aria-labelledby="servicios-adicionales-heading">
       <div class="container mx-auto px-6 py-8 md:px-12">
@@ -204,25 +132,7 @@ import ResidencialIndustiaSection from "../components/Residencial-Industria/Resi
       />
     </section>
 
-    <section aria-labelledby="minerales-heading">
-      <div class="container mx-auto px-6 py-8 md:px-12">
-        <h2 id="minerales-heading" class="text-2xl md:text-4xl font-bold text-[rgb(11,65,88)]">
-          Minerales y suministros
-        </h2>
-        <p class="mt-2 text-lg text-gray-700">
-          Minerales y suministros para piscinas y sistemas de agua, con el
-          respaldo de BlueDrop SRL.
-        </p>
-      </div>
-      <Image
-        id="logo9"
-        src={pagina9}
-        alt="Minerales y suministros para piscinas y tratamiento de agua - BlueDrop SRL"
-        width={1920}
-        height={1080}
-        class="w-screen object-fill"
-      />
-    </section>
+    <MineralesSuministrosSection />
 
     <section aria-labelledby="piscinas-heading">
       <div class="container mx-auto px-6 py-8 md:px-12">
