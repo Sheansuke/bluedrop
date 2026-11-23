@@ -2,20 +2,20 @@
 import { Image } from "astro:assets"
 
 import img1 from "../../assets/v2/page-9-images/sin-fondo/page-9-sinfondo-image-1.png"
-import img2 from "../../assets/v2/page-9-images/sin-fondo/page-9-sinfondo-image-2.png"
+import img2 from "../../assets/v2/page-9-images/sin-fondo/carbon-generico.png"
 import img3 from "../../assets/v2/page-9-images/sin-fondo/page-9-sinfondo-image-3.png"
-import img4 from "../../assets/v2/page-9-images/sin-fondo/page-9-sinfondo-image-4.png"
+import img4 from "../../assets/v2/page-9-images/sin-fondo/resina-generica.png"
 import img5 from "../../assets/v2/page-9-images/sin-fondo/page-9-sinfondo-image-5.png"
-import img6 from "../../assets/v2/page-9-images/sin-fondo/page-9-sinfondo-image-6.png"
+import img6 from "../../assets/v2/page-9-images/sin-fondo/medio-filtrante-generico.png"
 import img7 from "../../assets/v2/page-9-images/sin-fondo/page-9-sinfondo-image-7.png"
-import img8 from "../../assets/v2/page-9-images/sin-fondo/page-9-sinfondo-image-8.png"
+import img8 from "../../assets/v2/page-9-images/sin-fondo/hiperfiltracion-generica.png"
 import img9 from "../../assets/v2/page-9-images/sin-fondo/page-9-sinfondo-image-9.png"
 import img10 from "../../assets/v2/page-9-images/sin-fondo/page-9-sinfondo-image-10.png"
-import img11 from "../../assets/v2/page-9-images/sin-fondo/page-9-sinfondo-image-11.png"
+import img11 from "../../assets/v2/page-9-images/sin-fondo/pellets-genericos.png"
 import img12 from "../../assets/v2/page-9-images/sin-fondo/page-9-sinfondo-image-12.png"
-import img14 from "../../assets/v2/page-9-images/sin-fondo/page-9-sinfondo-image-14.png"
 import img15 from "../../assets/v2/page-9-images/sin-fondo/page-9-sinfondo-image-15.png"
-import img16 from "../../assets/v2/page-9-images/sin-fondo/page-9-sinfondo-image-16.png"
+import salPremium from "../../assets/v2/page-9-images/sin-fondo/sal-premium-en-roca.png"
+import img16 from "../../assets/v2/page-9-images/sin-fondo/antiescalante-generico.png"
 import img17 from "../../assets/v2/page-9-images/sin-fondo/page-9-sinfondo-image-17.png"
 
 interface MineralSupply {
@@ -41,36 +41,36 @@ const filtrationMedia: MineralSupply[] = [
   {
     title: "Carbón Activado Granular",
     category: "Decloración y Purificación",
-    description: "Carbón activado de alta adsorción (Calgon Carbon) para eliminación de cloro, olor, color, pesticidas y compuestos orgánicos.",
+    description: "Carbón activado granular para la reducción de cloro, olores y compuestos orgánicos en el agua.",
     mainImage: img2,
-    mainAlt: "Saco de carbón activado granular Calgon Carbon - BlueDrop SRL",
+    mainAlt: "Saco de carbón activado granular",
     sampleImage: img3,
     sampleAlt: "Gránulos de carbón activado para purificación de agua"
   },
   {
     title: "Resina Catióica de Intercambio Iónico",
     category: "Suavización de Agua",
-    description: "Resina Dow Amberlite de alta capacidad para eliminación de dureza cálcica y magnésica en ablandadores residenciales e industriales.",
+    description: "Resina de intercambio iónico para reducir la dureza del agua en ablandadores residenciales e industriales.",
     mainImage: img4,
-    mainAlt: "Saco de resina catiónica de intercambio iónico Dow Amberlite - BlueDrop SRL",
+    mainAlt: "Saco de resina catiónica de intercambio iónico",
     sampleImage: img5,
     sampleAlt: "Microesferas de resina de intercambio iónico para descalcificación"
   },
   {
-    title: "Filter-Ag® Clack",
+    title: "Medio Filtrante Granular",
     category: "Filtración Ligera",
     description: "Medio granular silíceo no anhídrido de baja densidad, diseñado para retención de partículas con menos requerimiento de flujo de retrolavado.",
     mainImage: img6,
-    mainAlt: "Saco de medio filtrante Filter-Ag Clack - BlueDrop SRL",
+    mainAlt: "Saco de medio filtrante granular",
     sampleImage: img7,
-    sampleAlt: "Muestra granular de medio Filter-Ag Clack"
+    sampleAlt: "Muestra de medio filtrante granular"
   },
   {
-    title: "Turbidex™ Hiperfiltración",
+    title: "Medio para Hiperfiltración",
     category: "Hiperfiltración 3-5 Micras",
     description: "Mineral aluminosilicato de alta porosidad que filtra partículas suspendidas hasta 3-5 micras, superando a los filtros de arena tradicionales.",
     mainImage: img8,
-    mainAlt: "Saco y mineral granular Turbidex para hiperfiltración de agua - BlueDrop SRL"
+    mainAlt: "Saco y mineral granular para hiperfiltración de agua"
   }
 ]
 
@@ -85,27 +85,27 @@ const chemicalsAndSalts: MineralSupply[] = [
   {
     title: "Sal en Pellets de Alta Pureza",
     category: "Regeneración de Suavizadores",
-    description: "Fine Pellets al 99.8% de cloruro de sodio puro para regeneración limpia de suavizadores, evitando apelmazamiento en el tanque de salmuera.",
+    description: "Sal en pellets para la regeneración de suavizadores de agua.",
     mainImage: img11,
-    mainAlt: "Saco de sal compactada Fine Pellets para suavizadores - BlueDrop SRL",
+    mainAlt: "Saco de sal en pellets para suavizadores",
     sampleImage: img12,
     sampleAlt: "Pellets blancos de sal pura compactada para tratamiento de agua"
   },
   {
-    title: "Sal Marina en Roca Aquaven",
+    title: "Sal Premium en Roca",
     category: "Piscinas y Ablandadores",
-    description: "Sal premium en grano 99.6% pura (50 lb / 22.6 kg) recomendada para cloradores salinos de piscinas y sistemas ablandadores.",
-    mainImage: img14,
-    mainAlt: "Saco de sal premium en roca Aquaven 50 lb - BlueDrop SRL",
+    description: "Sal premium en roca para piscinas y sistemas ablandadores de agua.",
+    mainImage: salPremium,
+    mainAlt: "Saco ilustrativo de sal premium en roca",
     sampleImage: img15,
-    sampleAlt: "Cristales de sal marina en roca natural"
+    sampleAlt: "Cristales de sal en roca"
   },
   {
-    title: "Ameroyal™ 710 Anti-Escalante",
+    title: "Antiescalante para Ósmosis Inversa",
     category: "Protección de Membranas",
     description: "Antiescalante BlueDrop de alto rendimiento (20 L / 5 galones) para prevenir depósitos de sílice y carbonatos en sistemas de ósmosis inversa.",
     mainImage: img16,
-    mainAlt: "Envase de 5 galones de anti-escalante Ameroyal 710 BlueDrop - BlueDrop SRL"
+    mainAlt: "Envase de antiescalante para ósmosis inversa"
   },
   {
     title: "Químicos Industriales en Tambor",
