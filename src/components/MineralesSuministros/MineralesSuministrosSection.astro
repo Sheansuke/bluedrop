@@ -4,19 +4,19 @@ import { Image } from "astro:assets"
 import img1 from "../../assets/v2/page-9-images/sin-fondo/page-9-sinfondo-image-1.png"
 import img2 from "../../assets/v2/page-9-images/sin-fondo/carbon-generico.png"
 import img3 from "../../assets/v2/page-9-images/sin-fondo/page-9-sinfondo-image-3.png"
-import img4 from "../../assets/v2/page-9-images/sin-fondo/resina-generica.png"
+import img4 from "../../assets/v2/page-9-images/sin-fondo/resina-cationica.png"
 import img5 from "../../assets/v2/page-9-images/sin-fondo/page-9-sinfondo-image-5.png"
-import img6 from "../../assets/v2/page-9-images/sin-fondo/medio-filtrante-generico.png"
+import img6 from "../../assets/v2/page-9-images/sin-fondo/filter-ag.png"
 import img7 from "../../assets/v2/page-9-images/sin-fondo/page-9-sinfondo-image-7.png"
 import img8 from "../../assets/v2/page-9-images/sin-fondo/hiperfiltracion-generica.png"
 import img9 from "../../assets/v2/page-9-images/sin-fondo/page-9-sinfondo-image-9.png"
-import img10 from "../../assets/v2/page-9-images/sin-fondo/page-9-sinfondo-image-10.png"
+import img10 from "../../assets/v2/page-9-images/sin-fondo/arena-silica.png"
 import img11 from "../../assets/v2/page-9-images/sin-fondo/pellets-genericos.png"
 import img12 from "../../assets/v2/page-9-images/sin-fondo/page-9-sinfondo-image-12.png"
 import img15 from "../../assets/v2/page-9-images/sin-fondo/page-9-sinfondo-image-15.png"
-import salPremium from "../../assets/v2/page-9-images/sin-fondo/sal-premium-en-roca.png"
+import salPremium from "../../assets/v2/page-9-images/sin-fondo/sal-granulada-importada.png"
 import img16 from "../../assets/v2/page-9-images/sin-fondo/antiescalante-generico.png"
-import img17 from "../../assets/v2/page-9-images/sin-fondo/page-9-sinfondo-image-17.png"
+import img17 from "../../assets/v2/page-9-images/sin-fondo/tambores-horizontales.png"
 
 interface MineralSupply {
   title: string
@@ -30,7 +30,7 @@ interface MineralSupply {
 
 const filtrationMedia: MineralSupply[] = [
   {
-    title: "Arena y Grava Sílica",
+    title: "Medio Filtrante: Arena Sílica",
     category: "Filtración Física",
     description: "Lecho filtrante graduado para retención eficiente de turbidez, sólidos suspendidos y sedimentos en aguas potables e industriales.",
     mainImage: img10,
@@ -48,7 +48,7 @@ const filtrationMedia: MineralSupply[] = [
     sampleAlt: "Gránulos de carbón activado para purificación de agua"
   },
   {
-    title: "Resina Catióica de Intercambio Iónico",
+    title: "Resina Catiónica",
     category: "Suavización de Agua",
     description: "Resina de intercambio iónico para reducir la dureza del agua en ablandadores residenciales e industriales.",
     mainImage: img4,
@@ -57,7 +57,7 @@ const filtrationMedia: MineralSupply[] = [
     sampleAlt: "Microesferas de resina de intercambio iónico para descalcificación"
   },
   {
-    title: "Medio Filtrante Granular",
+    title: "Medio Filtrante: Filter AG",
     category: "Filtración Ligera",
     description: "Medio granular silíceo no anhídrido de baja densidad, diseñado para retención de partículas con menos requerimiento de flujo de retrolavado.",
     mainImage: img6,
@@ -92,11 +92,11 @@ const chemicalsAndSalts: MineralSupply[] = [
     sampleAlt: "Pellets blancos de sal pura compactada para tratamiento de agua"
   },
   {
-    title: "Sal Premium en Roca",
+    title: "Sal Granulada de 50 Libras Importada",
     category: "Piscinas y Ablandadores",
     description: "Sal premium en roca para piscinas y sistemas ablandadores de agua.",
     mainImage: salPremium,
-    mainAlt: "Saco ilustrativo de sal premium en roca",
+    mainAlt: "Saco ilustrativo de sal granulada importada de 50 libras",
     sampleImage: img15,
     sampleAlt: "Cristales de sal en roca"
   },
