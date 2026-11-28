@@ -1,6 +1,7 @@
 ---
 import { Image } from "astro:assets"
-import pagina7 from "../assets/pagina7-sin-marcas.png"
+import pretratamientoOriginal from "../assets/v2/pretratamiento-original.png"
+import purificadorSinMarca from "../assets/v2/purificador-sin-marca.png"
 import pagina8 from "../assets/pagina8.jpg"
 import pagina10 from "../assets/pagina10-sin-marcas.png"
 import vasoagua from "../assets/vasoaguav3.png"
@@ -95,21 +96,35 @@ import Layout from "../layouts/Layout.astro"
     <section aria-labelledby="servicios-adicionales-heading">
       <div class="container mx-auto px-6 py-8 md:px-12">
         <h2 id="servicios-adicionales-heading" class="text-2xl md:text-4xl font-bold text-[rgb(11,65,88)]">
-          Servicios profesionales de agua
+          Servicios profesionales
         </h2>
         <p class="mt-2 text-lg text-gray-700">
-          Más que una compañía, somos tus aliados para el tratamiento de agua y
-          los servicios de piscinas en República Dominicana.
+          Ofrecemos servicios de tratamiento de agua, piscinas y jacuzzis,
+          construcción, remodelación de espacios y electricidad en República Dominicana.
         </p>
       </div>
-      <Image
-        id="pagina7"
-        src={pagina7}
-        alt="Servicios profesionales de tratamiento de agua y piscinas en República Dominicana - BlueDrop SRL"
-        width={1920}
-        height={1080}
-        class="w-screen object-fill"
-      />
+      <div id="pagina7" class="container mx-auto px-6 pb-12 md:px-12 md:pb-16 scroll-mt-20">
+        <div class="grid gap-6 md:grid-cols-2 md:gap-8">
+          <article class="overflow-hidden rounded-2xl border border-gray-100 bg-white shadow-md">
+            <div class="flex h-64 items-center justify-center bg-slate-50 p-6 md:h-80">
+              <Image src={pretratamientoOriginal} alt="Sistema de pretratamiento con tres tanques de filtración" width={689} height={574} class="h-full w-full object-contain" loading="lazy" />
+            </div>
+            <div class="p-6 md:p-8">
+              <h3 class="text-xl font-bold text-[rgb(11,65,88)] md:text-2xl">Sistema de pretratamiento</h3>
+              <p class="mt-3 leading-relaxed text-gray-700">Ayuda a reducir sedimentos y otras impurezas antes de las siguientes etapas de tratamiento. Su configuración depende de la calidad del agua y de las necesidades de cada instalación.</p>
+            </div>
+          </article>
+          <article class="overflow-hidden rounded-2xl border border-gray-100 bg-white shadow-md">
+            <div class="flex h-64 items-center justify-center bg-slate-50 p-6 md:h-80">
+              <Image src={purificadorSinMarca} alt="Sistema de purificación por ósmosis inversa con tanque y grifo" width={900} height={600} class="h-full w-full object-contain" loading="lazy" />
+            </div>
+            <div class="p-6 md:p-8">
+              <h3 class="text-xl font-bold text-[rgb(11,65,88)] md:text-2xl">Sistema de purificación</h3>
+              <p class="mt-3 leading-relaxed text-gray-700">La ósmosis inversa ayuda a reducir sustancias disueltas en el agua. Según el sistema y la aplicación, puede complementarse con desinfección ultravioleta.</p>
+            </div>
+          </article>
+        </div>
+      </div>
     </section>
 
     <section aria-labelledby="soluciones-integrales-heading">
